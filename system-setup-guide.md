@@ -6,15 +6,6 @@ This guide and workbook will keep you oriented during the lessons while giving y
 
 [Go directly to workbook section](#workbook-for-your-local-setup).
 
-For your notes, you want to make a table like this:
-
-| Parameter name | Example fvalues |
-|----------------|-------|-------|
-| Your username | | david |
-| Your home directory | | /home/david |
-|Your project directory | | /workspaces/vscode |
-| Number of threads | | 4 |
-
 
 ## VS Code and Markdown 
 

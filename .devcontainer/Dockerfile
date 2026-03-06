@@ -20,10 +20,14 @@ RUN curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xvj bi
 RUN useradd -m -s /bin/bash codespace && \
     mkdir -p /opt/conda && \
     chown -R codespace:codespace /opt/conda && \
-    mkdir -p /workspace/dc_workshop/data/{untrimmed_fastq,trimmed_fastq} && \
-    mkdir -p /workspace/dc_workshop/results/{fastqc_untrimmed_reads,fastqc_trimmed_reads,assembly_JC1A} && \
-    mkdir -p /workspace/dc_workshop/{taxonomy,mags,docs} && \
-    chown -R codespace:codespace /workspace
+    mkdir -p /home/codespace/dc_workshop/data/untrimmed_fastq && \
+    mkdir -p /home/codespace/dc_workshop/data/trimmed_fastq && \
+    mkdir -p /home/codespace/dc_workshop/results/fastqc_untrimmed_reads && \
+    mkdir -p /home/codespace/dc_workshop/results/fastqc_trimmed_reads && \
+    mkdir -p /home/codespace/dc_workshop/results/assembly_JC1A && \
+    mkdir -p /home/codespace/dc_workshop/taxonomy && \
+    mkdir -p /home/codespace/dc_workshop/mags && \
+    mkdir -p /home/codespace/dc_workshop/docs
 
 # =============================================================================
 # User section: install conda environment as codespace (allows future installs)
@@ -49,8 +53,7 @@ RUN echo 'eval "$(micromamba shell hook --shell bash)"' >> ~/.bashrc && \
     echo 'micromamba activate metagenomics' >> ~/.bashrc
 
 # Download Trimmomatic adapters (continue even if it fails)
-RUN cd /workspace/dc_workshop/data/untrimmed_fastq && \
-    wget -O TruSeq3-PE.fa \
+RUN wget -P /home/codespace/dc_workshop/data/untrimmed_fastq \
     https://raw.githubusercontent.com/timflutre/trimmomatic/master/adapters/TruSeq3-PE-2.fa || \
     echo "Note: Trimmomatic adapters download failed, students can download manually"
 
@@ -62,4 +65,4 @@ LABEL org.opencontainers.image.description="Metagenomics Analysis (command-line 
 LABEL org.opencontainers.image.source="https://github.com/meekrob/workshops-unified"
 LABEL org.opencontainers.image.tools="fastqc, trimmomatic, spades, kraken-biom"
 
-WORKDIR /workspace
+WORKDIR /home/codespace

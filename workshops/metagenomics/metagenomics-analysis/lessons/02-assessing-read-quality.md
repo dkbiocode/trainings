@@ -139,35 +139,8 @@ very poor (`#` = a quality score of 2).
 >   
 >   Do you trust the sequence in this read? 
 > 
->> ## Solution
->> ~~~
->>   
->> a) It shows the ID and quality of the last read but also unnecessary lines from previous reads.  
->> b) No. It shows the first read's info.  
->> c) It shows the text of the entire file.  
->> d) This option is the best answer as it only shows the last read's information.  
->> e) It does show the ID of the last read but not the quality.  
->> 
->> ~~~
->> 
->> 
->> ~~~
->>@MISEQ-LAB244-W7:156:000000000-A80CV:1:2114:17866:28868 1:N:0:CTCAGA
->>
->>CCCGTTCTCCACCTCGGCGCGCGCCAGCTGCGGCTCGTCCTTCCACAGGAACTTCCACGTCGCCGTCAGCCGCGACACGTTCTCCCCCCTCGCATGCTCGTCCTGTCTCTCGTGCTTGGCCGACGCCTGCGCCTCGCACTGCGCCCGCTCGGTGTCGTTCATGTTGATCTTCACCGTGGCGTGCATGAAGCGGTTCCCGGCCTCGTCGCCACCCACGCCATCCGCGTCGGCCAGCCACTCTCACTGCTCGC
->>
->>+
->>
->>AA11AC1>3@DC1F1111000A0/A///BB#############################################################################################################################################################################################################################          
->> ~~~
->> 
->> 
->> This read has more consistent quality at its first than at the end
->> but still has a range of quality scores, 
->> most of them are low. We will look at variations in position-based quality
->> in just a moment.
->> 
-> 
+>
+> **[View Exercise with Solution](.exercises/02-assessing-read-quality/exercise-1.md)**> 
 
 
 In real life, you won't be assessing the quality of your reads by visually inspecting your 
@@ -286,34 +259,8 @@ $ cd ../../dc_workshop/data/untrimmed_fastq/
 > d) `ls -lh`  
 > e) `ls -ahlS`  
 >   
->> ## Solution
->>  
->> ~~~
->>   
->> a) No. The flag `-a` shows all the contents, including hidden files and directories, but not the sizes.  
->> b) No. The flag `-S` shows the content Sorted by size, starting with the most extensive file, but not the sizes.  
->> c) Yes. The flag `-l` shows the contents with metadata, including file size. Other metadata are permissions, owners, and modification dates.    
->> d) Yes. The flag `-lh` shows the content with metadata in a human-readable manner.  
->> e) Yes. The combination of all the flags shows all the contents with metadata, including hidden files, sorted by size.  
->> ~~~
->> 
->> 
->> ~~~
->> ls -ahls
->> ~~~
->> 
->> 
->> ~~~
->> -rw-r--r-- 1 codespace codespace  24M Nov 26 21:34 JC1A_R1.fastq.gz                      
->> -rw-r--r-- 1 codespace codespace  24M Nov 26 21:34 JC1A_R2.fastq.gz                      
->> -rw-r--r-- 1 codespace codespace 616M Nov 26 21:34 JP4D_R1.fastq              
->> -rw-r--r-- 1 codespace codespace 203M Nov 26 21:35 JP4D_R2.fastq.gz   
->> ~~~
->> 
->> 
->> Four FASTQ files oscillate between 24M (24MB) to 616M. The largest file is JP4D_R1.fastq with 616M. 
->> 
-> 
+>
+> **[View Exercise with Solution](.exercises/02-assessing-read-quality/exercise-2.md)**> 
 
 
 FastQC can accept multiple file names as input, and on both zipped and unzipped files,
@@ -448,23 +395,8 @@ Introduction to the Command Line lesson.
 > E) `~/Desktop/fastqc_html` (or `%USERPROFILE%\Desktop\fastqc_html` on Windows) is a remote path
 > F) `:` divides the host name of your local computer and the path of the file   
 > 
->> ## Solution
->>  A) False. `codespace` is your remote user.  
->>  B) True. `ec2-34-238-162-94.compute-1.amazonaws.com` is the address of your remote machine  
->>  C) False. The current address of the file goes after the first space in the `scp` command.  
->>  D) True. `../../dc_workshop/results/fastqc_untrimmed_reads/*.html` is the path of the file you want to download in the remote machine. 
->>  E) False. `~/Desktop/fastqc_html` is a local path where your file will be downloaded.
->>  F) False. `:` Divides the host name of a _remote_ computer and the path of the file on the remote computer.   
->>  
->>  You should see a status output like this:
->>  ~~~
->>  JC1A_R1_fastqc.html     100%  253KB 320.0KB/s   00:00     
->>  JC1A_R2_fastqc.html     100%  262KB 390.1KB/s   00:00     
->>  JP4D_R1_fastqc.html     100%  237KB 360.8KB/s   00:00     
->>  JP4D_R2_fastqc.html     100%  244KB 385.2KB/s   00:00
->>  ~~~
->>  
-> 
+>
+> **[View Exercise with Solution](.exercises/02-assessing-read-quality/exercise-3.md)**> 
 
 
 
@@ -480,10 +412,8 @@ in your file browser.
 > per base sequence quality? Which sample(s) look the
 > worst?
 > 
->> ## Solution
->> All of the reads contain usable data, but the quality decreases toward
->> the end of the reads. File JC1A_R2_fastqc shows the lowest quality.
-> 
+>
+> **[View Exercise with Solution](.exercises/02-assessing-read-quality/exercise-4.md)**> 
 
 
 ## Decoding the other FastQC outputs
@@ -693,34 +623,8 @@ $ cat */summary.txt > ../../dc_workshop/docs/fastqc_summaries.txt
 > Which samples failed at least one of FastQC's quality tests? What
 > test(s) did those samples failed
 >
->> ## Solution
->> 
->> We can get the list of all failed tests using `grep`. 
->> 
->> ~~~ 
->> $ cd ../../dc_workshop/docs
->> $ grep FAIL fastqc_summaries.txt
->> ~~~
->> 
->> 
->> ~~~
->> FAIL    Per base sequence quality       JC1A_R1.fastq.gz             
->> FAIL    Per sequence GC content JC1A_R1.fastq.gz                     
->> FAIL    Sequence Duplication Levels     JC1A_R1.fastq.gz             
->> FAIL    Adapter Content JC1A_R1.fastq.gz                             
->> FAIL    Per base sequence quality       JC1A_R2.fastq.gz             
->> FAIL    Per sequence GC content JC1A_R2.fastq.gz                     
->> FAIL    Sequence Duplication Levels     JC1A_R2.fastq.gz             
->> FAIL    Adapter Content JC1A_R2.fastq.gz                             
->> FAIL    Per base sequence content       JP4D_R1.fastq     
->> FAIL    Adapter Content JP4D_R1.fastq                     
->> FAIL    Per base sequence quality       JP4D_R2.fastq.gz  
->> FAIL    Per base sequence content       JP4D_R2.fastq.gz  
->> FAIL    Adapter Content JP4D_R2.fastq.gz
->> ~~~
->> 
->> 
-> 
+>
+> **[View Exercise with Solution](.exercises/02-assessing-read-quality/exercise-5.md)**> 
 
 
 > ## Quality of large datasets
@@ -785,7 +689,9 @@ $ cat */summary.txt > ../../dc_workshop/docs/fastqc_summaries.txt
 > > 
 > > If we were to run this script, it would ask us for confirmation to redo several steps because we already did all of them. If you want to, you can run it to check that it works, but it is not necessary if you already completed every step of the previous episode.
 >
+
 >
+> **[View Exercise with Solution](.exercises/02-assessing-read-quality/exercise-6.md)**>
 
 ---
 

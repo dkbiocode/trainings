@@ -258,7 +258,7 @@ We will take advantage of this information later on in our analyses.
 > your chosen phylum and what are the unique names of the genera inside it.
 > がんばって! (ganbatte; *good luck*):
 >
-> **[View Exercise with Solution](.07-phyloseq-exercises/exercise-1.md)**> 
+> **[View Exercise with Solution](.exercises/07-phyloseq/exercise-1.md)**> 
    
   
 > ## Exercise 2: Searching for the read counts
@@ -268,7 +268,7 @@ We will take advantage of this information later on in our analyses.
 > **Hint**: Remember that you can access the contents of a data frame with the `["row_name", "column_name"]` syntax.  
 > がんばって! (ganbatte; *good luck*):
 >
-> **[View Exercise with Solution](.07-phyloseq-exercises/exercise-2.md)**> 
+> **[View Exercise with Solution](.exercises/07-phyloseq/exercise-2.md)**> 
 
 
 ---

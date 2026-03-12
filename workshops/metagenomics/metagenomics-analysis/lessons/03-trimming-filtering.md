@@ -227,7 +227,7 @@ TrimmomaticPE: Completed successfully
 > 2) What percent of reads did we keep both pairs?
 >
 >
-> **[View Exercise with Solution](.03-trimming-filtering-exercises/exercise-1.md)**> 
+> **[View Exercise with Solution](.exercises/03-trimming-filtering/exercise-1.md)**> 
 
 
 You may have noticed that Trimmomatic automatically detected the
@@ -355,7 +355,7 @@ JC1A_R2un.trim.fastq.gz  JP4D_R2un.trim.fastq.gz
 > 
 > 
 >
-> **[View Exercise with Solution](.03-trimming-filtering-exercises/exercise-2.md)**>
+> **[View Exercise with Solution](.exercises/03-trimming-filtering/exercise-2.md)**>
 
 ---
 

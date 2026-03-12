@@ -36,7 +36,7 @@ coverage levels and the tetranucleotide frequencies they have.
 >  between 4Mbp and 13Mbp (Mb=10^6 bp) and that the size of the reads in this run is 150bp. With these data, 
 >  how many complete bacterial genomes can you reconstruct?
 >
-> **[View Exercise with Solution](.05-binning-exercises/discussion-1.md)**> 
+> **[View Exercise with Solution](.exercises/05-binning/discussion-1.md)**> 
 
 Let us bin the sample we just assembled. The command for running MaxBin is `run_MaxBin.pl`, and the arguments it needs are the FASTA file of the assembly, the FASTQ with the forward and reverse reads, the output directory, and the name. 
 
@@ -128,7 +128,7 @@ JP4D.004.fasta	77.6%	5692657	38.9
 > What else do we want to know about our MAGs to use for further analysis confidently?
 > 
 >
-> **[View Discussion with Solution](.05-binning-exercises/discussion-2.md)**> 
+> **[View Discussion with Solution](.exercises/05-binning/discussion-2.md)**> 
 
 
 ## Quality check 
@@ -191,7 +191,7 @@ The question of how much contamination we can tolerate and how much completeness
 >  
 > 
 >
-> **[View Exercise with Solution](.05-binning-exercises/exercise-3.md)**
+> **[View Exercise with Solution](.exercises/05-binning/exercise-3.md)**
 
 
 ---

@@ -91,7 +91,7 @@ MG-RAST has its own specific pipeline, so it is a handy tool to have a quick loo
 > Explore one of the suggested resources and discuss your findings with a neighbor.
 
 >
-> **[View Exercise with Solution](.10-OtherResources-exercises/discussion-1.md)**
+> **[View Exercise with Solution](.exercises/10-OtherResources/discussion-1.md)**
 
 
 ## Carpentries Philosophy

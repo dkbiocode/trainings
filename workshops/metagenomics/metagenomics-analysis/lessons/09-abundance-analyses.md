@@ -266,7 +266,7 @@ information; and plotting**:
 >  | Make a palette with the appropriate colors for the number of genera. | `proteo_df$Genus <- as.factor(proteo_df$Genus)` |  
 > 
 >
-> **[View Exercise with Solution](.09-abundance-analyses-exercises/exercise-1.md)**  representing the absolute abundance of Proteobacteria in each of the samples. 
+> **[View Exercise with Solution](.exercises/09-abundance-analyses/exercise-1.md)**  representing the absolute abundance of Proteobacteria in each of the samples. 
   Each of the colors represents a Genus. Because we see relative 
   abundances, all the bars have the same height." />
 >></a>

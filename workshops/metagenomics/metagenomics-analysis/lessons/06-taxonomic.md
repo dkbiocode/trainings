@@ -61,7 +61,7 @@ the organisms in the sample.
 > What do you think is harder to assign, a species (like _E. coli_) or a phylum (like Proteobacteria)?
 
 >
-> **[View Exercise with Solution](.06-taxonomic-exercises/discussion-1.md)**
+> **[View Exercise with Solution](.exercises/06-taxonomic/discussion-1.md)**
   
 ## Using Kraken 2
 
@@ -337,7 +337,7 @@ You will see a page like this:
 > Hint: A search box is in the window's top left corner. 
 > 
 >
-> **[View Exercise with Solution](.06-taxonomic-exercises/exercise-2.md)**> 
+> **[View Exercise with Solution](.exercises/06-taxonomic/exercise-2.md)**> 
  
 
 ### Pavian
@@ -392,7 +392,7 @@ We can look at a comparison of both our samples in the Comparison tab.
 > Which factors can affect the taxonomic assignation so that a read is unclassified?
 > 
 >
-> **[View Exercise with Solution](.06-taxonomic-exercises/discussion-3.md)**> 
+> **[View Exercise with Solution](.exercises/06-taxonomic/discussion-3.md)**> 
 
 
 ---

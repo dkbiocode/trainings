@@ -199,7 +199,7 @@ sample ID. If we need the files out of their folder, it is beneficial to rename 
 > D) `$ for name in *; do mv $name JC1A_$name; done`      
 >    
 >
-> **[View Exercise with Solution](.04-assembly-exercises/exercise-1.md)**> 
+> **[View Exercise with Solution](.exercises/04-assembly/exercise-1.md)**> 
 
 
 > ## Exercise 2: Compare two fasta files from the assembly output 
@@ -209,7 +209,7 @@ sample ID. If we need the files out of their folder, it is beneficial to rename 
 > **Hint**: You can use the following commands: `grep`, `|` (pipe), `-l`, `">"`, `wc`, `filename.fasta`
 > 
 >
-> **[View Exercise with Solution](.04-assembly-exercises/exercise-2.md)**> 
+> **[View Exercise with Solution](.exercises/04-assembly/exercise-2.md)**> 
 
 
 > ## Quality of assemblies

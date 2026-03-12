@@ -133,7 +133,7 @@ There are different ways to plot and show the results of such analysis. Among ot
 > *Hic Sunt Leones!* (*Here be Lions!*)  
 >
 >
-> **[View Exercise with Solution](.08-Diversity-tackled-with-R-exercises/exercise-1.md)**> 
+> **[View Exercise with Solution](.exercises/08-Diversity-tackled-with-R/exercise-1.md)**> 
 
 
 ## Plot alpha diversity 
@@ -225,7 +225,7 @@ remarking the impossibility of taking two reads out of the metagenome "bag" and 
 > other ways to present the data.
 >
 >
-> **[View Exercise with Solution](.08-Diversity-tackled-with-R-exercises/exercise-2.md)**>  
+> **[View Exercise with Solution](.exercises/08-Diversity-tackled-with-R/exercise-2.md)**>  
   
   
 A caution when comparing samples is that differences in some alpha indexes may be the consequence of the difference in the total number 
@@ -404,14 +404,14 @@ In this NMDS plot, each point represents the combined abundance of all its OTUs.
 > ~~~
 > 
 >
-> **[View Exercise with Solution](.08-Diversity-tackled-with-R-exercises/exercise-3.md)**> 
+> **[View Exercise with Solution](.exercises/08-Diversity-tackled-with-R/exercise-3.md)**> 
 
   
 > ## Discussion: Indexes of diversity  
 > Why do you think we need different indexes to asses diversity? What index will you use to assess the impact of rare, low-abundance taxa?
 > 
 >
-> **[View Exercise with Solution](.08-Diversity-tackled-with-R-exercises/discussion-4.md)**> 
+> **[View Exercise with Solution](.exercises/08-Diversity-tackled-with-R/discussion-4.md)**> 
 
 
 ---

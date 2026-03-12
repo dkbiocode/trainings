@@ -101,7 +101,7 @@ of our experimental design to the metadata we expect to collect and record caref
 > Which type of metadata would be helpful to record?
 > 
 >
-> **[View Exercise with Solution](.01-background-metadata-exercises/discussion-1.md)**>   
+> **[View Exercise with Solution](.exercises/01-background-metadata/discussion-1.md)**>   
 
 
 ## Cuatro Ciénegas  
@@ -142,7 +142,7 @@ changed when the bacterial community underwent the treatment.
 >  2. In the table [samples treatment information](https://github.com/carpentries-incubator/metagenomics/blob/gh-pages/files/Samples_treatment_information.tsv), what was the most critical piece of metadata that the authors took?  
 > 
 >
-> **[View Exercise with Solution](.01-background-metadata-exercises/exercise-2.md)**> 
+> **[View Exercise with Solution](.exercises/01-background-metadata/exercise-2.md)**> 
 
 
 > ## Exercise 2: Differentiate between IDs and sample names 
@@ -150,7 +150,7 @@ changed when the bacterial community underwent the treatment.
 > Depending on the database, several IDs can be used for the same sample.
 > Please open the document where the [metadata information is stored](https://github.com/carpentries-incubator/metagenomics/blob/gh-pages/files/Samples_treatment_information.tsv). Here, inspect the IDs and find out which of them correspond to sample	**JP4110514WATERRESIZE**
 >
-> **[View Exercise with Solution](.01-background-metadata-exercises/exercise-3.md)**> 
+> **[View Exercise with Solution](.exercises/01-background-metadata/exercise-3.md)**> 
 
 
 > ## Exercise 3: Discuss the importance of metadata 
@@ -158,7 +158,7 @@ changed when the bacterial community underwent the treatment.
 > Which other information could you recommend to add in the metadata?
 > 
 >
-> **[View Exercise with Solution](.01-background-metadata-exercises/exercise-4.md)**> 
+> **[View Exercise with Solution](.exercises/01-background-metadata/exercise-4.md)**> 
 
 
 Throughout the lesson, we will use the first four

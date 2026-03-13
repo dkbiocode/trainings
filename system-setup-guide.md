@@ -1,64 +1,37 @@
 # System Setup Guide and Workbook
 
-This document is intended for you to record important details of your setup so that you can refer to them later.  
+This document is intended for you to record important details of your setup so that you can refer to them later.  This will serve as a guide to keep you oriented during the lessons.
 
-This guide and workbook will keep you oriented during the lessons while giving you some experience using VS Code and markdown.
+You want to read the sections below and record in your notes the following:
 
-[Go directly to workbook section](#workbook-for-your-local-setup).
-
-
-## VS Code and Markdown 
-
-### VS Code
-
-**V**isual **S**tudio **C**ode is an IDE - **I**ntegrated **D**evelopment **E**nvironment. It combines visual tools with an editor and a terminal into different panes of the same window. This makes it ideal for reviewing content and instructional material while being able to work in the terminal pane on the same screen.
-
-#### Availability
-
-VS Code is maintained by Microsoft as an [Open Source Product](https://github.com/Microsoft/vscode?tab=readme-ov-file#visual-studio-code---open-source-code---oss).  That means it is free to download to your desktop or laptop computer. More importantly for our purposes, various platforms use a version of it (VS Code Server) to allow access to files and execute commands remotely through your web browser. 
-
-#### Further information
-
-See this official [getting started](https://code.visualstudio.com/docs/getstarted/getting-started) guide, and/or [view this document](guides/VS-CODE-README.md) to see some examples in the GitHub Codespace setting.
-
-### Markdown and how to use it
-
-Markdown (as opposed to Mark***up***) is a syntax-light method of formatting plaintext documents.  It is human readable and intuitive to look at markup code but provides more flexible features when rendered, such as text formatting, links and images.
-
-#### Example
-
-![screen shots of Markdown code versus rendered formatted text](guides/img/md-syntax-vs-rendered.png)
-
-If you're viewing this in VS Code, you can do <kbd>Shift</kbd>-<kbd>Command/ctrl</kbd>-<kbd>V</kbd> to render it (called Preview). If you're viewing this in GitHub, you are seeing the rendered version unless you click on raw or switch to "Code" in the content viewer pane.
-
-#### Editing
-
-This guide will have you edit and save command output.  In VS Code, try it now by double-clicking anywhere on this line of text which will open the editor and place the cursor on this line. Enter text in the space here: `___  ___` (e.g. your name). Now go back to the Preview window to see it rendered.
-
-The lessons will not require editing, but this setup workbook below will assume you know how. Alternatively, you can make your own notes elsewhere.
-
-## Workbook for your local setup
-
-[back to top](#system-setup-guide-and-workbook)
-
-Let's get started exploring our environment and noting important setup aspects for your computer. The lessons will link here for reference.
-
-### Your project root
-
-If you're viewing this in a GitHub Codespace, then you have downloaded (or *cloned*) the repository automatically.  If you are on a different Linux server, you will have cloned the repository into a specific place.
-
-```
-pwd
-```
-
-*MY PROJECT ROOT IS __*
-
----
+* My home directory is:
+* My project root is:
+* My parallel threads available:
 
 ### Your home directory
 
-Most Linux systems use a **home directory**, but they are not always meant for computation. Also, GitHub Codespaces has one, but work is done elsewhere (/workspaces/).  
+Most Linux systems use a **home directory** but they are not always suitable for computation, which will take place beneath your *project root (see below).* When you log on to a system, it is typically configured for you to start in your home directory.
 
+*Example:* if your user name is **mcmuffin**, your home directory will be `/home/mcmuffin`
+
+On Github Codespaces, your user name is **codespace**, so your home directory will be `/home/codespace`.
+
+
+### Your project root
+
+For these lessons, the **project root** is the location on your server where you have downloaded (or *cloned*) the files for these workshops.
+
+#### On Github Codespaces
+
+If you're viewing this in a GitHub Codespace, then you have downloaded (or *cloned*) the repository automatically into the file path `/workspaces/trainings`.  Although VS Code starts at that location, your terminal will start in your home directory.
+
+Github Codespace project root: `/workspaces/trainings`
+
+#### On an HPC server
+
+On an institutional high performance computing Linux server, there is often a designated space for code and computation.  Example: On my server at Alpine, I decided to put my project root in `/projects/dcking@colostate.edu/trainings`. I have to `cd` to the parent directory and clone the repository.
+
+HPC Server Project root: `/your-project-space` **See your system administrator for more details**
 
 ---
 

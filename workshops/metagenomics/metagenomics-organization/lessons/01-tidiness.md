@@ -38,6 +38,8 @@ The sequence data itself is useless without the information about what you seque
 >
 > [See solution to exercise 1](.01-tidiness-exercises/lesson-1-exercise-1-solution.md)
 
+>
+> **[View Exercise with Solution](.exercises/01-tidiness/exercise-1.md)**
 
 All the data and information discussed can be considered metadata, 
 i.e., data about the data. We want to follow a few guidelines for metadata.
@@ -91,6 +93,8 @@ what the data is about.
 >
 > [See solution to exercise 2](.01-tidiness-exercises/lesson-1-exercise-2-solution.md)
 
+>
+> **[View Exercise with Solution](.exercises/01-tidiness/exercise-2.md)**
 
 
 > ## Exercise 3: Ethical considerations in microbiome studies
@@ -99,6 +103,8 @@ what the data is about.
 >
 > [See solution to exercise 3](.01-tidiness-exercises/lesson-1-exercise-3-solution.md)
 
+>
+> **[View Exercise with Solution](.exercises/01-tidiness/exercise-3.md)**
 
 
 ### Structuring data in spreadsheets
@@ -136,6 +142,8 @@ This format ensures that anyone can use the data required by most data repositor
 >
 > [See solution to exercise 4](.01-tidiness-exercises/lesson-1-exercise-4-solution.md)
 
+>
+> **[View Exercise with Solution](.exercises/01-tidiness/exercise-4.md)**
 
 ## Further notes on data tidiness
 

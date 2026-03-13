@@ -44,6 +44,8 @@ methods and approaches we need in bioinformatics are the same ones we need at th
 >
 > [See solution to exercise 1](.02-project-planning-exercises/lesson-2-exercise-1-solution.md)
 
+>
+> **[View Exercise with Solution](.exercises/02-project-planning/exercise-1.md)**
 
 
 ## Sending samples to the facility
@@ -64,6 +66,8 @@ with Excel or another spreadsheet program.
 >
 > [See solution to exercise 2](.02-project-planning-exercises/lesson-2-exercise-2-solution.md)
 
+>
+> **[View Exercise with Solution](.exercises/02-project-planning/exercise-2.md)**
 
 ## Retrieving sample sequencing data from the facility
 
@@ -84,6 +88,8 @@ Excel file:
 >
 > [See solution to exercise 3](.02-project-planning-exercises/lesson-2-exercise-3-solution.md)
 
+>
+> **[View Exercise with Solution](.exercises/02-project-planning/exercise-3.md)**
 
 ## Storing data
 

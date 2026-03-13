@@ -124,8 +124,10 @@ Now you have written a file. You can look at it with `less` or `cat`, or open it
 >
 > Open `README.txt`, add the date to the top of the file, and save the file. 
 >
-> [Click to view solution](.05-writing-scripts-exercises/lesson-5-exercise-1-solution.md)
+> [Click to view solution](.exercises/05-writing-scripts/lesson-5-exercise-1-solution.md)
 
+>
+> **[View Exercise with Solution](.exercises/05-writing-scripts/exercise-1.md)**
 ## Writing scripts
 
 A really powerful thing about the command line is that you can write scripts. Scripts let you save commands to run them and also lets you put multiple commands together. Though writing scripts may require an additional time investment initially, this can save you time as you run them repeatedly. Scripts can also address the challenge of reproducibility: if you need to repeat analysis, you retain a record of your command history within the script.
@@ -159,8 +161,10 @@ It will look like nothing happened, but now if you look at `scripted_bad_reads.t
 >
 > We want the script to tell us when it is done.  
 > 
-> [Click to view solution](.05-writing-scripts-exercises/lesson-5-exercise-2-solution.md)
+> [Click to view solution](.exercises/05-writing-scripts/lesson-5-exercise-2-solution.md)
+
 >
+> **[View Exercise with Solution](.exercises/05-writing-scripts/exercise-2.md)**>
 
 ## Making the script into a program
 

@@ -86,6 +86,8 @@ Follow the next steps to access the data in the SRA using the information in thi
 >
 > [See solution to exercise 1](.03-ncbi-sra-exercises/lesson-3-exercise-1-solution.md)
 
+>
+> **[View Exercise with Solution](.exercises/03-ncbi-sra/exercise-1.md)**
 
 After answering the questions, you should avoid saving any changes you might have made to this file. We don't want to make any changes. If you were to save this file, make sure you save it as a plain `.txt` file. Remember to keep raw things raw.
 
@@ -96,6 +98,8 @@ After answering the questions, you should avoid saving any changes you might hav
 >
 > [See solution to exercise 2](.03-ncbi-sra-exercises/lesson-3-exercise-2-solution.md)
 
+>
+> **[View Exercise with Solution](.exercises/03-ncbi-sra/exercise-2.md)**
 
 
 ## Where to learn more

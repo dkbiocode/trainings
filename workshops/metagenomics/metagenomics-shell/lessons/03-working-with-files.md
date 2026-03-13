@@ -413,8 +413,10 @@ just nicely put the files in the Trash. They're really gone.
 > 4. Change the permissions on all of your backup files to be write-protected.  
 >
 > 
-> [See solution to exercise 1](.03-working-with-files-exercises/lesson-3-exercise-1-solution.md)
-> 
+> [See solution to exercise 1](.exercises/03-working-with-files/lesson-3-exercise-1-solution.md)
+
+>
+> **[View Exercise with Solution](.exercises/03-working-with-files/exercise-1.md)**> 
 
 ---
 

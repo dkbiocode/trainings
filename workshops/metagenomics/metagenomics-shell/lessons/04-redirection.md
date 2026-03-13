@@ -110,8 +110,10 @@ AAA11BB3333BGG1GGEC1E?0E0B0BFDGFHD2FBH110A1BEE?A/BAFBDGH///>FEGGG><@/#//?#?/#//?
 > Have your search return all matching lines and the name (or identifier) for each sequence
 > that contains a match.
 > 
-> [Click to view solution](.04-redirection-exercises/lesson-4-exercise-1-solution.md)
+> [Click to view solution](.exercises/04-redirection/lesson-4-exercise-1-solution.md)
 
+>
+> **[View Exercise with Solution](.exercises/04-redirection/exercise-1.md)**
 ## Redirecting output
 
 `grep` allowed us to identify sequences in our FASTQ files that match a particular pattern. 
@@ -169,8 +171,10 @@ four to get the number of sequences that match our search pattern.
 >
 > How many sequences in `JC1A_R2.fastq` contain at least 3 consecutive Ns?
 >
-> [Click to view solution](.04-redirection-exercises/lesson-4-exercise-2-solution.md)
+> [Click to view solution](.exercises/04-redirection/lesson-4-exercise-2-solution.md)
 
+>
+> **[View Exercise with Solution](.exercises/04-redirection/exercise-2.md)**
 
 We might want to search multiple FASTQ files for sequences that match our search pattern.
 However, we need to be careful, because each time we use the `>` command to redirect output
@@ -357,8 +361,10 @@ JP4D_R2
 >
 > Print the file prefix of all of the `.txt` files in our current directory.
 >
-> > [Click to view solution](.04-redirection-exercises/lesson-4-exercise-3-solution.md)
+> > [Click to view solution](.exercises/04-redirection/lesson-4-exercise-3-solution.md)
 
+>
+> **[View Exercise with Solution](.exercises/04-redirection/exercise-3.md)**
 
 One way this is really useful is to move files. Let's rename all of our .txt files using `mv` so that they have the years on them, which will document when we created them. 
 

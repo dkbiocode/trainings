@@ -95,9 +95,11 @@ $ cd ../../..
 > identify the name of the text file in that directory.
 > 
 > Hint: hidden files and folders in Unix start with `.`, for example `.my_hidden_directory`
->
 
-[See Solution to Exercise 1](.02-the-filesystem-exercises/lesson-2-exercise-1-solution.md)
+>
+> **[View Exercise with Solution](.exercises/02-the-filesystem/exercise-1.md)**>
+
+[See Solution to Exercise 1](.exercises/02-the-filesystem/lesson-2-exercise-1-solution.md)
 
 
 ### File permissions
@@ -217,9 +219,11 @@ navigate amongst them.
 > 4.  `original pnas_final pnas_sub`
 > 
 > <img src="../fig/filesystem-challenge.svg" alt="Filesystem diagram with folders: Users/thing/backup/2012-12-02, Users/thing/backup/2012-01-08, Users/thing/backup/2013-01-27, Users/backup/original, Users/backup/pnas_final, and Users/backup/pnas_sub" />
-> 
 
-> [See Solution to Exercise 2](.02-the-filesystem-exercises/lesson-2-exercise-2-solution.md) 
+>
+> **[View Exercise with Solution](.exercises/02-the-filesystem/exercise-2.md)**> 
+
+> [See Solution to Exercise 2](.exercises/02-the-filesystem/lesson-2-exercise-2-solution.md) 
 
 
 The commands `cd`, and `cd ~` are very useful for quickly navigating back to your home directory. We will be using the `~` character in later lessons to specify our home directory.

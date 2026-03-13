@@ -210,8 +210,10 @@ to quit.
 > in the directory. What is one piece of additional information this long format
 > gives you that you don't see with the bare `ls` command?
 >
-> [See solution to exercise 1](.01-introduction-exercises/lesson-1-exercise-1-solution.md)
+> [See solution to exercise 1](.exercises/01-introduction/lesson-1-exercise-1-solution.md)
 
+>
+> **[View Exercise with Solution](.exercises/01-introduction/exercise-1.md)**
 
 No one can possibly learn all of these arguments, that's why the manual page
 is for. You can (and should) refer to the manual page or other help files

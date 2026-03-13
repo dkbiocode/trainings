@@ -93,8 +93,10 @@ You should see the output (your home directory path):
 > - `workshop/data`
 > - `workshop/results`
 > 
-> [View solution](.06-organization-exercises/lesson-6-exercise-1-solution.md)
+> [View solution](.exercises/06-organization/lesson-6-exercise-1-solution.md)
 
+>
+> **[View Exercise with Solution](.exercises/06-organization/exercise-1.md)**
 
 Use `ls -R` to verify that you have created these directories. The `-R` option for `ls` stands for recursive. This option causes
 `ls` to return the contents of each subdirectory within the directory
@@ -176,8 +178,10 @@ $ history | tail -n 7
 > `workshop_log_XXXX_XX_XX.sh` (Use the four-digit year, two-digit month, and two digit day, e.g.
 > `workshop_log_2021_03_25.sh`)  
 >
-> [View solution](.06-organization-exercises/lesson-6-exercise-2-solution.md)
+> [View solution](.exercises/06-organization/lesson-6-exercise-2-solution.md)
 
+>
+> **[View Exercise with Solution](.exercises/06-organization/exercise-2.md)**
 You may have noticed that your history contains the `history` command itself. To remove this redundancy
 from our log, let's use the `nano` text editor to fix the file:  
 

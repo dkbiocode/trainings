@@ -44,8 +44,6 @@ If you are on a Linux system, including Codespaces, do:
 ```
 nproc
 ```
-*I AM USING __ THREADS*
-
 
 #### Examples
 

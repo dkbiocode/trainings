@@ -43,9 +43,8 @@ Let us bin the sample we just assembled. The command for running MaxBin is `run_
 <p style="text-align: right;"><a href=".whereami/PROJ_ROOT.workshops.metagenomics.dc_workshop.results.assembly_JC1A" target="_new">🧭</a></p>
 
 ~~~
-$ cd ../../dc_workshop/results/assembly_JC1A
-$ mkdir MAXBIN
-$ run_MaxBin.pl -thread 8 -contig JC1A_contigs.fasta -reads ../../data/trimmed_fastq/JC1A_R1.trim.fastq.gz -reads2 ../../data/trimmed_fastq/JC1A_R2.trim.fastq.gz -out MAXBIN/JC1A
+/workspaces/trainings/dc_workshop/results/assembly_JC1A $ mkdir MAXBIN
+/workspaces/trainings/dc_workshop/results/assembly_JC1A $ run_MaxBin.pl -thread 8 -contig JC1A_contigs.fasta -reads ../../data/trimmed_fastq/JC1A_R1.trim.fastq.gz -reads2 ../../data/trimmed_fastq/JC1A_R2.trim.fastq.gz -out MAXBIN/JC1A
 ~~~
  
 ~~~
@@ -75,9 +74,9 @@ We will perform the binning process with the other sample from the same study th
 <p style="text-align: right;"><a href=".whereami/PROJ_ROOT.workshops.metagenomics.dc_workshop.mags" target="_new">🧭</a></p>
 
 ~~~
-$ cd ../../dc_workshop/mags/
-$ mkdir MAXBIN
-$ run_MaxBin.pl -thread 4 -contig JP4D_contigs.fasta -reads ../data/trimmed_fastq/JP4D_R1.trim.fastq.gz -reads2 ../data/trimmed_fastq/JP4D_R2.trim.fastq.gz -out MAXBIN/JP4D
+/workspaces/trainings/dc_workshop/results/assembly_JC1A $ cd ../../mags/
+/workspaces/trainings/dc_workshop/mags $ mkdir MAXBIN
+/workspaces/trainings/dc_workshop/mags $ run_MaxBin.pl -thread 4 -contig JP4D_contigs.fasta -reads ../data/trimmed_fastq/JP4D_R1.trim.fastq.gz -reads2 ../data/trimmed_fastq/JP4D_R2.trim.fastq.gz -out MAXBIN/JP4D
 ~~~
   
 It will take a few minutes to run. Moreover, it will finish with an output like this:
@@ -106,10 +105,10 @@ Store abundance information of reads file [../data/trimmed_fastq/JP4D_R2.trim.fa
 ~~~
   
 
-With the `.summary` file, we can quickly look at the bins that MaxBin produced. 
+With the `.summary` file, we can quickly look at the bins that MaxBin produced.
 
 ~~~
-$ cat MAXBIN/JP4D.summary
+/workspaces/trainings/dc_workshop/mags $ cat MAXBIN/JP4D.summary
 ~~~
   
 
@@ -144,11 +143,11 @@ The lineage workflow that is a part of CheckM places your bins in a reference tr
 This is a less accurate approach, but it can also be advantageous if you want all of your bins analyzed with the same markers. 
 
 We will run the taxonomy workflow specifying the use of markers at the domain level, specific for the rank Bacteria, 
-we will specify that our bins are in FASTA format, that they are located in the `MAXBIN` directory 
+we will specify that our bins are in FASTA format, that they are located in the `MAXBIN` directory
 and that we want our output in the `CHECKM/` directory.<sup><a href=".whereami/PROJ_ROOT.workshops.metagenomics.dc_workshop.mags" target="_new">🧭</a></sup>
 ~~~
-$ mkdir CHECKM
-$ checkm taxonomy_wf domain Bacteria -x fasta MAXBIN/ CHECKM/ 
+/workspaces/trainings/dc_workshop/mags $ mkdir CHECKM
+/workspaces/trainings/dc_workshop/mags $ checkm taxonomy_wf domain Bacteria -x fasta MAXBIN/ CHECKM/
 ~~~
  
 
@@ -172,9 +171,9 @@ and make it print the output in a `TSV` table instead of the console. In this st
 Ideally, we would like to get only one contig per bin, with a length similar to the genome size of the corresponding taxa. Since this scenario is complicated to obtain, we can use parameters showing how good our assembly is. Here are some of the most common metrics:
 If we arrange our contigs by size, from larger to smaller, and divide the whole sequence in half, N50 is the size of the smallest contig in the half that has the larger contigs; and L50 is the number of contigs in this half of the sequence. So we want big N50 and small L50 values for our genomes. Read [What is N50?](https://www.molecularecologist.com/2017/03/29/whats-n50/).
 
-To get the table with these extra parameters, we need to specify the file of the markers that CheckM used in the previous step, `Bacteria.ms`, the name of the output file we want, `quality_JP4D.tsv`, that we want a table `--tab_table`, and the option number 2 `-o 2` is to ask for the extra parameters printed on the table. 
+To get the table with these extra parameters, we need to specify the file of the markers that CheckM used in the previous step, `Bacteria.ms`, the name of the output file we want, `quality_JP4D.tsv`, that we want a table `--tab_table`, and the option number 2 `-o 2` is to ask for the extra parameters printed on the table.
 ~~~
-$  checkm qa CHECKM/Bacteria.ms CHECKM/ --file CHECKM/quality_JP4D.tsv --tab_table -o 2
+/workspaces/trainings/dc_workshop/mags $ checkm qa CHECKM/Bacteria.ms CHECKM/ --file CHECKM/quality_JP4D.tsv --tab_table -o 2
 ~~~
  
 The table we just made looks like [this](https://github.com/carpentries-incubator/metagenomics/blob/gh-pages/files/quality_JP4D.tsv).

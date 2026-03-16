@@ -15,7 +15,7 @@ This guide shows you how to connect your local VS Code installation to a remote 
 3. Search for "Remote - SSH"
 4. Install the extension published by Microsoft
 
-![Remote-SSH Extension](img/remote-ssh-extension.png)
+![Remote-SSH Extension](../img/remote-ssh-extension.png)
 
 ## Step 2: Set Up Your SSH Key
 
@@ -105,7 +105,7 @@ Wait for the instance to be in "running" state before connecting.
 
 1. Click the green Remote indicator in the bottom-left corner of VS Code (looks like `><`)
 
-   ![Remote Indicator](img/remote-indicator.png)
+   ![Remote Indicator](../img/remote-indicator.png)
 
 2. Select "Connect to Host..." from the menu
 

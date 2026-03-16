@@ -43,20 +43,20 @@ We should still be in the `shell-lesson-data` directory in our Codespace,
 which we can check using:
 
 ~~~
-$ pwd
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data $ pwd
 ~~~
 
 ~~~
-[WORKSHOP_PATH]/workshops/shell-novice/shell-lesson-data
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data
 ~~~
 
 Next we'll move to the `exercise-data/writing` directory and see what it contains:
 ~~~
-$ cd exercise-data/writing/
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data $ cd exercise-data/writing/
 ~~~
 
 ~~~
-$ ls -F
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/writing $ ls -F
 ~~~
 
 ~~~
@@ -69,7 +69,7 @@ Let's create a new directory called `thesis` using the command `mkdir thesis`
 (which has no output):
 
 ~~~
-$ mkdir thesis
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/writing $ mkdir thesis
 ~~~
 
 As you might guess from its name,
@@ -79,7 +79,7 @@ Since `thesis` is a relative path
 the new directory is created in the current working directory:
 
 ~~~
-$ ls -F
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/writing $ ls -F
 ~~~
 
 ~~~
@@ -89,7 +89,7 @@ haiku.txt  LittleWomen.txt  thesis/
 Since we've just created the `thesis` directory, there's nothing in it yet:
 
 ~~~
-$ ls -F thesis
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/writing $ ls -F thesis
 ~~~
 
 Note that `mkdir` is not limited to creating single directories one at a time.
@@ -97,7 +97,7 @@ The `-p` option allows `mkdir` to create a directory with nested subdirectories
 in a single operation:
 
 ~~~
-$ mkdir -p ../project/data ../project/results
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/writing $ mkdir -p ../project/data ../project/results
 ~~~
 
 The `-R` option to the `ls` command will list all nested subdirectories within a directory.
@@ -105,7 +105,7 @@ Let's use `ls -FR` to recursively list the new directory hierarchy we just creat
 `project` directory:
 
 ~~~
-$ ls -FR ../project
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/writing $ ls -FR ../project
 ~~~
 
 ~~~
@@ -158,8 +158,8 @@ Let's change our working directory to `thesis` using `cd`,
 then run a text editor called Nano to create a file called `draft.txt`:
 
 ~~~
-$ cd thesis
-$ nano draft.txt
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/writing $ cd thesis
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/writing/thesis $ nano draft.txt
 ~~~
 
 > ## Which Editor?
@@ -223,7 +223,7 @@ return to the shell.
 but `ls` now shows that we have created a file called `draft.txt`:
 
 ~~~
-$ ls
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/writing/thesis $ ls
 ~~~
 
 ~~~
@@ -308,7 +308,7 @@ draft.txt
 Returning to the `shell-lesson-data/exercise-data/writing` directory,
 
 ```
-$ cd [WORKSHOP_PATH]/workshops/shell-novice/shell-lesson-data/exercise-data/writing/thesis
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/writing $ cd thesis
 ```
 
 In our `thesis` directory we have a file `draft.txt`
@@ -317,19 +317,19 @@ so let's change the file's name using `mv`,
 which is short for 'move':
 
 ~~~
-$ mv thesis/draft.txt thesis/quotes.txt
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/writing/thesis $ mv draft.txt quotes.txt
 ~~~
 
 The first argument tells `mv` what we're 'moving',
 while the second is where it's to go.
 In this case,
-we're moving `thesis/draft.txt` to `thesis/quotes.txt`,
-which has the same effect as renaming the file.
+we're moving `draft.txt` to `quotes.txt`,
+which has the *same effect as renaming the file.*
 Sure enough,
-`ls` shows us that `thesis` now contains one file called `quotes.txt`:
+`ls` shows us that our current directory (thesis) now contains one file called `quotes.txt`:
 
 ~~~
-$ ls thesis
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/writing/thesis $ ls
 ~~~
 
 ~~~
@@ -344,7 +344,7 @@ such confirmation.
 
 Note that `mv` also works on directories.
 
-Let's move `quotes.txt` into the current working directory.
+Let's first move back to the `writing` directory, then move `quotes.txt` from `thesis/` into our current working directory.
 We use `mv` once again,
 but this time we'll use just the name of a directory as the second argument
 to tell `mv` that we want to keep the filename
@@ -354,14 +354,15 @@ In this case,
 the directory name we use is the special directory name `.` that we mentioned earlier.
 
 ~~~
-$ mv thesis/quotes.txt .
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/writing/thesis $ cd ..
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/writing $ mv thesis/quotes.txt .
 ~~~
 
 The effect is to move the file from the directory it was in to the current working directory.
 `ls` now shows us that `thesis` is empty:
 
 ~~~
-$ ls thesis
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/writing $ ls thesis
 ~~~
 
 ~~~
@@ -372,7 +373,7 @@ Alternatively, we can confirm the file `quotes.txt` is no longer present in the 
 by explicitly trying to list it:
 
 ~~~
-$ ls thesis/quotes.txt
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/writing $ ls thesis/quotes.txt
 ~~~
 
 ```
@@ -384,7 +385,7 @@ If the file given as the argument doesn't exist, the shell returns an error as w
 We can use this to see that `quotes.txt` is now present in our current directory:
 
 ~~~
-$ ls quotes.txt
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/writing $ ls quotes.txt
 ~~~
 
 ~~~
@@ -434,8 +435,8 @@ with two paths as arguments --- like most Unix commands,
 `ls` can be given multiple paths at once:
 
 ~~~
-$ cp quotes.txt thesis/quotations.txt
-$ ls quotes.txt thesis/quotations.txt
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/writing $ cp quotes.txt thesis/quotations.txt
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/writing $ ls quotes.txt thesis/quotations.txt
 ~~~
 
 ~~~
@@ -447,13 +448,13 @@ We can also copy a directory and all its contents by using the
 e.g. to back up a directory:
 
 ```
-$ cp -r thesis thesis_backup
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/writing $ cp -r thesis thesis_backup
 ```
 
 We can check the result by listing the contents of both the `thesis` and `thesis_backup` directory:
 
 ```
-$ ls thesis thesis_backup
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/writing $ ls thesis thesis_backup
 ```
 
 ```
@@ -552,13 +553,13 @@ let's tidy up this directory by removing the `quotes.txt` file we created.
 The Unix command we'll use for this is `rm` (short for 'remove'):
 
 ~~~
-$ rm quotes.txt
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/writing $ rm quotes.txt
 ~~~
 
 We can confirm the file has gone using `ls`:
 
 ~~~
-$ ls quotes.txt
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/writing $ ls quotes.txt
 ~~~
 
 ```
@@ -598,7 +599,7 @@ If we try to remove the `thesis` directory using `rm thesis`,
 we get an error message:
 
 ~~~
-$ rm thesis
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/writing $ rm thesis
 ~~~
 
 ~~~
@@ -611,7 +612,7 @@ This happens because `rm` by default only works on files, not directories.
 recursive option `-r`, and it will do so *without any confirmation prompts*:
 
 ~~~
-$ rm -r thesis
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/writing $ rm -r thesis
 ~~~
 
 Given that there is no way to retrieve files deleted using the shell,

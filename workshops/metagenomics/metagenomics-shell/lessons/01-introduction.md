@@ -71,10 +71,10 @@ Notice the pane below this editor/Preview window pane. It has several headings (
 
 If you're using GitHub Codespaces, you should already have a terminal open. If not, you can open one from the menu (Terminal → New Terminal) or by pressing <kbd>Ctrl</kbd>+<kbd>`</kbd>.
 
-You can clear your screen using the `clear` command. 
+You can clear your screen using the `clear` command.
 
 ~~~
-$ clear
+/home/codespace $ clear
 ~~~
 
 This will scroll your screen down to give you a fresh screen and will make it easier to read. 
@@ -107,11 +107,11 @@ Several commands are frequently used to create, inspect, rename, and delete file
 The dollar sign is a **prompt**, which shows us that the shell is waiting for input;
 your shell may use a different character as a prompt and may add information before
 the prompt. When typing commands, either from these lessons or from other sources,
-do not type the prompt, only the commands that follow it. In this lesson we will use the 
-dollar sign to indicate the prompt. 
+do not type the prompt, only the commands that follow it. In this lesson we will use the
+full working directory path to indicate the prompt.
 
 ~~~
-$
+/home/codespace $
 ~~~
 
 
@@ -127,7 +127,7 @@ the computer's response is your home directory (e.g., `/home/codespace` in Codes
 which is the top level directory within your environment:
 
 ~~~
-$ pwd
+/home/codespace $ pwd
 ~~~
 
 ~~~
@@ -138,7 +138,7 @@ Let's look at how our file system is organized. We can see what files and subdir
 which stands for "listing":
 
 ~~~
-$ ls
+/home/codespace $ ls
 ~~~
 
 ~~~
@@ -158,13 +158,13 @@ Let's say we want to navigate to the `dc_workshop` directory we saw above.  We c
 use the following command to get there:
 
 ~~~
-$ cd dc_workshop
+/home/codespace $ cd dc_workshop
 ~~~
 
 Let's look at what is in this directory:
 
 ~~~
-$ ls
+/home/codespace/dc_workshop $ ls
 ~~~
 
 ~~~
@@ -175,7 +175,7 @@ We can make the `ls` output more comprehensible by using the **flag** `-F`,
 which tells `ls` to add a trailing `/` to the names of directories, or other symbols to identify the type of elements in the directory:
 
 ~~~
-$ ls -F
+/home/codespace/dc_workshop $ ls -F
 ~~~
 
 ~~~
@@ -197,7 +197,7 @@ from dc_workshop to the untrimmed_fastq folder, the path must go as they are ord
 `ls` has lots of other options. To find out what they are, we can type:
 
 ~~~
-$ man ls
+/home/codespace/dc_workshop $ man ls
 ~~~
 
 Some manual files are very long. You can scroll through the file using
@@ -222,8 +222,8 @@ as needed.
 Let's go into the `data/untrimmed_fastq` directory and see what is in there.
 
 ~~~
-$ cd data/untrimmed_fastq
-$ ls
+/home/codespace/dc_workshop $ cd data/untrimmed_fastq
+/home/codespace/dc_workshop/data/untrimmed_fastq $ ls
 ~~~
 
 ~~~
@@ -234,11 +234,11 @@ This directory contains a file `TruSeq3-PE.fa`, that we will use in a later less
 for storing information about sequencing reads and their quality. GZ is an archive file compressed.
 We will be learning more about FASTQ files in a later lesson. These data comes in a compressed format, 
 which is why there is a `.gz` at the end of the files. 
-This makes it faster to transfer, and allows it to take up less space on our computer. 
+This makes it faster to transfer, and allows it to take up less space on our computer.
 Let's use `gunzip` to decompress the files so that we can look at the FASTQ format.
 ~~~
-$ gunzip JC1A_R1.fastq.gz  JC1A_R2.fastq.gz  JP4D_R1.fastq.gz  JP4D_R2.fastq.gz
-$ ls
+/home/codespace/dc_workshop/data/untrimmed_fastq $ gunzip JC1A_R1.fastq.gz  JC1A_R2.fastq.gz  JP4D_R1.fastq.gz  JP4D_R2.fastq.gz
+/home/codespace/dc_workshop/data/untrimmed_fastq $ ls
 ~~~
 
 ~~~
@@ -258,13 +258,13 @@ directory or file name.
 Return to your home directory:
 
 ~~~
-$ cd
+/home/codespace/dc_workshop/data/untrimmed_fastq $ cd
 ~~~
 
 then enter:
 
 ~~~
-$ cd dc<tab>
+/home/codespace $ cd dc<tab>
 ~~~
 
 The shell will fill in the rest of the directory name for
@@ -273,7 +273,7 @@ The shell will fill in the rest of the directory name for
 Now change directories to `dc_workshop`
 
 ~~~
-$ cd dc_workshop
+/home/codespace $ cd dc_workshop
 ~~~
 
 Using tab complete can be very helpful. However, it will only autocomplete
@@ -283,8 +283,8 @@ a unique identifier for the file or directory you are trying to access.
 If we navigate to our `data` directory and try to access one of our sample files:
 
 ~~~
-$ cd data/untrimmed_fastq
-$ ls JC<tab>
+/home/codespace/dc_workshop $ cd data/untrimmed_fastq
+/home/codespace/dc_workshop/data/untrimmed_fastq $ ls JC<tab>
 ~~~
 
 The shell auto-completes your command to `JC1A_R`, because there is another file name in
@@ -292,7 +292,7 @@ the directory begins with this prefix. When you hit
 <kbd>Tab</kbd> again, the shell will list the possible choices.
 
 ~~~
-$ ls JC1A_R<tab><tab>
+/home/codespace/dc_workshop/data/untrimmed_fastq $ ls JC1A_R<tab><tab>
 ~~~
 
 ~~~
@@ -303,7 +303,7 @@ Tab completion can also fill in the names of programs, which can be useful if yo
 remember the beginning of a program name.
 
 ~~~
-$ pw<tab><tab>
+/home/codespace/dc_workshop/data/untrimmed_fastq $ pw<tab><tab>
 ~~~
 
 ~~~

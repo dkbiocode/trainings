@@ -42,8 +42,8 @@ Let's start by going back to `alkanes/` and creating a new file, `middle.sh` whi
 become our shell script:
 
 ~~~
-$ cd alkanes
-$ nano middle.sh
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data $ cd alkanes
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/alkanes $ nano middle.sh
 ~~~
 
 The command `nano middle.sh` opens the file `middle.sh` within the text editor 'nano'
@@ -67,7 +67,7 @@ we can ask the shell to execute the commands it contains.
 Our shell is called `bash`, so we run the following command:
 
 ~~~
-$ bash middle.sh
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/alkanes $ bash middle.sh
 ~~~
 
 ~~~
@@ -100,7 +100,7 @@ in the shell and executing it with a new file name.
 Instead, let's edit `middle.sh` and make it more versatile:
 
 ~~~
-$ nano middle.sh
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/alkanes $ nano middle.sh
 ~~~
 
 Now, within "nano", replace the text `octane.pdb` with the special variable called `$1`:
@@ -114,7 +114,7 @@ Inside a shell script,
 We can now run our script like this:
 
 ~~~
-$ bash middle.sh octane.pdb
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/alkanes $ bash middle.sh octane.pdb
 ~~~
 
 ~~~
@@ -128,7 +128,7 @@ ATOM     13  H           1      -3.172  -1.337   0.206  1.00  0.00
 or on a different file like this:
 
 ~~~
-$ bash middle.sh pentane.pdb
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/alkanes $ bash middle.sh pentane.pdb
 ~~~
 
 ~~~
@@ -156,7 +156,7 @@ Knowing this, we can use additional arguments to define the range of lines to
 be passed to `head` and `tail` respectively:
 
 ~~~
-$ nano middle.sh
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/alkanes $ nano middle.sh
 ~~~
 
 ~~~
@@ -166,7 +166,7 @@ head -n "$2" "$1" | tail -n "$3"
 We can now run:
 
 ~~~
-$ bash middle.sh pentane.pdb 15 5
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/alkanes $ bash middle.sh pentane.pdb 15 5
 ~~~
 
 ~~~
@@ -181,7 +181,7 @@ By changing the arguments to our command, we can change our script's
 behaviour:
 
 ~~~
-$ bash middle.sh pentane.pdb 20 5
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/alkanes $ bash middle.sh pentane.pdb 20 5
 ~~~
 
 ~~~
@@ -197,7 +197,7 @@ but it may take the next person who reads `middle.sh` a moment to figure out wha
 We can improve our script by adding some **comments** at the top:
 
 ~~~
-$ nano middle.sh
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/alkanes $ nano middle.sh
 ~~~
 
 ~~~
@@ -217,7 +217,7 @@ What if we want to process many files in a single pipeline?
 For example, if we want to sort our `.pdb` files by length, we would type:
 
 ~~~
-$ wc -l *.pdb | sort -n
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/alkanes $ wc -l *.pdb | sort -n
 ~~~
 
 because `wc -l` lists the number of lines in the files
@@ -239,7 +239,7 @@ to handle the case of arguments containing spaces
 Here's an example:
 
 ~~~
-$ nano sorted.sh
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/alkanes $ nano sorted.sh
 ~~~
 
 ~~~
@@ -249,7 +249,7 @@ wc -l "$@" | sort -n
 ~~~
 
 ~~~
-$ bash sorted.sh *.pdb ../creatures/*.dat
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/alkanes $ bash sorted.sh *.pdb ../creatures/*.dat
 ~~~
 
 ~~~
@@ -320,7 +320,7 @@ Instead of typing them in again
 we can do this:
 
 ~~~
-$ history | tail -n 5 > redo-figure-3.sh
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/alkanes $ history | tail -n 5 > redo-figure-3.sh
 ~~~
 
 The file `redo-figure-3.sh` now contains:
@@ -375,13 +375,13 @@ The easiest way to capture all the steps is in a script.
 
 First we return to Nelle's project directory:
 ```
-$ cd ../../north-pacific-gyre/
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/alkanes $ cd ../../north-pacific-gyre/
 ```
 
 She creates a file using `nano` ...
 
 ~~~
-$ nano do-stats.sh
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/north-pacific-gyre $ nano do-stats.sh
 ~~~
 
 ...which contains the following:
@@ -399,13 +399,13 @@ She saves this in a file called `do-stats.sh`
 so that she can now re-do the first stage of her analysis by typing:
 
 ~~~
-$ bash do-stats.sh NENE*A.txt NENE*B.txt
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/north-pacific-gyre $ bash do-stats.sh NENE*A.txt NENE*B.txt
 ~~~
 
 She can also do this:
 
 ~~~
-$ bash do-stats.sh NENE*A.txt NENE*B.txt | wc -l
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/north-pacific-gyre $ bash do-stats.sh NENE*A.txt NENE*B.txt | wc -l
 ~~~
 
 so that the output is just the number of files processed

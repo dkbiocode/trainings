@@ -68,10 +68,10 @@ the organisms in the sample.
 [Kraken 2](https://ccb.jhu.edu/software/kraken2/) is the newest version of Kraken, 
 a taxonomic classification system using exact k-mer matches to achieve 
 high accuracy and fast classification speeds. `kraken2` is already installed in the **metagenomics
-environment**, let us have a look at `kraken2` help.  
- 
-~~~  
-$ kraken2  --help
+environment**, let us have a look at `kraken2` help.
+
+~~~
+/workspaces/trainings/dc_workshop/mags $ kraken2 --help
 ~~~ 
 
 ~~~
@@ -122,11 +122,11 @@ is a regular file, automatic format detection is attempted.
 In the help, we can see that in addition to our input files, we also need a database to compare them.  The database you use will determine the result you get for your data. Imagine you are searching for a recently discovered lineage that is not part of the available databases. Would you find it?
 
 There are [several databases](http://ccb.jhu.edu/software/kraken2/downloads.shtml) 
-compatible to be used with kraken2 in the taxonomical assignment process. 
+compatible to be used with kraken2 in the taxonomical assignment process.
 
 Unfortunately, even the smallest Kraken database Minikraken, which needs 8Gb of free RAM, is not small enough to be run by the machines we are using, so **we will not be able to run `kraken2`**. We can check our available RAM with `free -h`to be sure of this.
 ~~~
-$ free -h
+/workspaces/trainings/dc_workshop/mags $ free -h
 ~~~
 
 
@@ -144,19 +144,19 @@ In this case, we would use FASTQ files as inputs, which would be
 `JP4D_R1.trim.fastq.gz` and `JP4D_R2.trim.fastq.gz`. And the outputs would be two files: the report
 `JP4D.report` and the kraken file `JP4D.kraken`.  
   
-To run kraken2, we would use a command like this:  
+To run kraken2, we would use a command like this:
 **Do not run this on codespaces.**
 ~~~
-$ mkdir TAXONOMY_READS
-$ kraken2 --db kraken-db --threads 8 --paired JP4D_R1.trim.fastq.gz JP4D_R2.trim.fastq.gz --output TAXONOMY_READS/JP4D.kraken --report TAXONOMY_READS/JP4D.report
+/workspaces/trainings/dc_workshop/mags $ mkdir TAXONOMY_READS
+/workspaces/trainings/dc_workshop/mags $ kraken2 --db kraken-db --threads 8 --paired JP4D_R1.trim.fastq.gz JP4D_R2.trim.fastq.gz --output TAXONOMY_READS/JP4D.kraken --report TAXONOMY_READS/JP4D.report
 ~~~
 
 Since we cannot run `kraken2` here, we precomputed its results on a server, i.e., a more powerful machine. 
 On the server we ran `kraken2` and obtained `JP4D-kraken.kraken` and `JP4D.report`.
 
-Let us look at the precomputed outputs of `kraken2` for our JP4D reads.  
+Let us look at the precomputed outputs of `kraken2` for our JP4D reads.
 ~~~
-head ../../dc_workshop/taxonomy/JP4D.kraken  
+/workspaces/trainings/dc_workshop/mags $ head ../taxonomy/JP4D.kraken
 ~~~
 
 ~~~
@@ -185,9 +185,9 @@ C	MISEQ-LAB244-W7:156:000000000-A80CV:1:1101:19558:2111	119045	251|133	0:18 1224
 |  0:28 350054:5 1224:2 0:1 2:5 0:77 2219696:5 0:93 379:4 0:82 | kmers hit to a taxonomic ID *e.g.,* tax ID 350054 has five hits, tax ID 1224 has two hits, etc. |   
 
 The Kraken file could be more readable. So let us look at the report file:
-  
+
 ~~~
-head ../../dc_workshop/taxonomy/JP4D.report
+/workspaces/trainings/dc_workshop/mags $ head ../taxonomy/JP4D.report
 ~~~
  
  
@@ -223,25 +223,25 @@ For this, the `kraken2` is a little bit different; here, we can look at the comm
 
 **No need to run this**
 ~~~
-$ mkdir TAXONOMY_MAG
-$ kraken2 --db kraken-db --threads 12 -input JP4D.001.fasta --output TAXONOMY_MAG/JP4D.001.kraken --report TAXONOMY_MAG/JP4D.001.report
+/workspaces/trainings/dc_workshop/mags $ mkdir TAXONOMY_MAG
+/workspaces/trainings/dc_workshop/mags $ kraken2 --db kraken-db --threads 12 -input JP4D.001.fasta --output TAXONOMY_MAG/JP4D.001.kraken --report TAXONOMY_MAG/JP4D.001.report
 ~~~
 
 
 The results of this are pre-computed in the `../../dc_workshop/taxonomy/mags_taxonomy/` directory
 ~~~
-$ cd ../../dc_workshop/taxonomy/mags_taxonomy
-$ ls
+/workspaces/trainings/dc_workshop/mags $ cd ../taxonomy/mags_taxonomy
+/workspaces/trainings/dc_workshop/taxonomy/mags_taxonomy $ ls
 ~~~
  
 ~~~
 JP4D.001.kraken
 JP4D.001.report
 ~~~
- 
+
 
 ~~~
-more ../../dc_workshop/taxonomy/mags_taxonomy/JP4D.001.report
+/workspaces/trainings/dc_workshop/taxonomy/mags_taxonomy $ more JP4D.001.report
 ~~~
  
 ~~~
@@ -295,18 +295,18 @@ our taxonomy directory, which contains the pre-calculated Kraken outputs.
 
 With Krona, we will explore the taxonomy of the JP4D.001 MAG.<sup><a href=".whereami/PROJ_ROOT.workshops.metagenomics.dc_workshop.results.assembly_JC1A" target="_new">🧭</a></sup>
 ~~~
-$ cd ../../dc_workshop/taxonomy/mags_taxonomy
+/workspaces/trainings/dc_workshop/mags $ cd ../taxonomy/mags_taxonomy
 ~~~
 
-Krona is called with the `ktImportTaxonomy` command that needs an input and an output file.  
-In our case, we will create the input file with columns three and four from `JP4D.001.kraken` file.     
+Krona is called with the `ktImportTaxonomy` command that needs an input and an output file.
+In our case, we will create the input file with columns three and four from `JP4D.001.kraken` file.
 ~~~
-$ cut -f2,3 JP4D.001.kraken > JP4D.001.krona.input
+/workspaces/trainings/dc_workshop/taxonomy/mags_taxonomy $ cut -f2,3 JP4D.001.kraken > JP4D.001.krona.input
 ~~~
 
-Now we call Krona in our `JP4D.001.krona.input` file and save results in `JP4D.001.krona.out.html`.  
+Now we call Krona in our `JP4D.001.krona.input` file and save results in `JP4D.001.krona.out.html`.
 ~~~
-$ ktImportTaxonomy JP4D.001.krona.input -o JP4D.001.krona.out.html
+/workspaces/trainings/dc_workshop/taxonomy/mags_taxonomy $ ktImportTaxonomy JP4D.001.krona.input -o JP4D.001.krona.out.html
 ~~~
 
 ~~~

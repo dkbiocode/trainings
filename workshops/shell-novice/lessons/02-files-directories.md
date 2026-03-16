@@ -35,29 +35,30 @@ Make sure **TERMINAL** is underlined. You can click other tabs (PROBLEMS, OUTPUT
 👀 First, look at the **prompt**, which appears as:
 
 ~~~
-@ghuser ➜ /workspaces/codespace-shell-novice (main) $ 
+@ghuser ➜ /workspaces/trainings (main) $
 ~~~
 
-💡 NOTICE:  **"ghuser"** is your GitHub username (mine is <mark style="font-weight:bold; background-color: rgba(0, 0, 0, 0); color: #267B00">meekrob</mark>).  
+💡 NOTICE:  **"ghuser"** is your GitHub username (mine is <mark style="font-weight:bold; background-color: rgba(0, 0, 0, 0); color: #267B00">meekrob</mark>).
 
 
-> ⚙️ Let's make a few temporary changes to simplify the environment. Copy and paste the following into your terminal, then press <kbd>RETURN</kbd>:
+> ⚙️ Let's make a few changes to simplify the environment. Copy and paste the following into your terminal, then press <kbd>RETURN</kbd>:
 > ~~~
 > unalias ls
-> PS1="$ "
+> PS1='\w \$ '
 > clear
 > ~~~
 >
 
-👀 Your TERMINAL should now show only a dollar sign (`$`) at the top. This is static—you can’t delete it.
+👀 Your TERMINAL should now show the current working directory followed by a dollar sign. This helps you always know where you are in the filesystem.
 
 ![clear prompt and cursor screenshot](img/prompt-cursor-screenshot.png)
 
 ### Breakdown of your terminal prompt:
 
 1. The circle is a VS Code UI element — **ignore it**.
-2. The `$` is the prompt marker. Your typing appears to its right.
-3. The dark rectangle is the **cursor**, indicating where text will be inserted.
+2. The `/workspaces/trainings` (or similar path) shows your current working directory.
+3. The `$` is the prompt marker. Your typing appears to its right.
+4. The dark rectangle is the **cursor**, indicating where text will be inserted.
 
 👉 Try it out.
 
@@ -86,22 +87,22 @@ a command is important. `pwd` shows you where you are:
 **Command:**
 
 ```
-$ pwd
+/workspaces/trainings $ pwd
 ```
 
 **Output:**
 
 ```
-/workspaces/codespace-shell-novice/
+/workspaces/trainings
 ```
 
-Here, the computer's response is `/workspaces/codespace-shell-novice/`.  
-This location is particular to GitHub Codespaces. We will refer to this as the **Codespace Starting Directory**.  On a normal server,
-you will be in your **HOME** directory (discussed later).
+Here, the computer's response is `/workspaces/trainings`.
+This location is particular to GitHub Codespaces. We will refer to this as the **Project Root**.  On a normal server,
+you might be in your **HOME** directory (discussed later), or you may need to navigate to your project directory.
 
-At the top of the filesystem is the **root directory**, which holds everything else.  
-It is written as a single slash `/`; this is the leading slash in  
-`/workspaces/codespace-shell-novice/`.
+At the top of the filesystem is the **root directory**, which holds everything else.
+It is written as a single slash `/`; this is the leading slash in
+`/workspaces/trainings`.
 
 Inside that directory are several other directories:
 `bin` (which is where some built-in programs are stored),
@@ -110,7 +111,7 @@ Inside that directory are several other directories:
 `tmp` (for temporary files that don't need to be stored long-term),
 and so on.
 
-We know that our current working directory `/workspaces/codespace-shell-novice/` is stored inside `/workspaces`
+We know that our current working directory `/workspaces/trainings` is stored inside `/workspaces`
 because "/workspaces" is the first part of its name.
 Similarly,
 we know that `/workspaces` is stored inside the root directory `/`
@@ -127,22 +128,19 @@ because its name begins with `/`.
 Under `/workspaces`, we find directories and files used for different purposes.  
 These make up the Codespace environment and include our lesson materials.
 
-Now let's learn the command that will help us explore our local directory.  
-We can see what's in our home directory by running `ls`:
-
-Now let's learn the command that helps us explore our current directory.  
+Now let's learn the command that helps us explore our current directory.
 We can list its contents by running `ls`:
 
 **Command:**
 
 ```
-$ ls
+/workspaces/trainings $ ls
 ```
 
 **Output:**
 
 ```
-CODESPACE-README.md  ENVIRONMENT_REFERENCES.md  VS-CODE-README.md  lessons  shell-lesson-data
+README.md  guides  system-setup-guide.md  vs-code-markdown.md  workshops
 ```
 
 `ls` prints the names of the files and directories in the current directory.
@@ -160,19 +158,19 @@ directory.
 **Command:**
 
 ~~~
-$ ls -F
+/workspaces/trainings $ ls -F
 ~~~
 
 **Output:**
 
 ~~~
-CODESPACE-README.md  ENVIRONMENT_REFERENCES.md  VS-CODE-README.md  lessons/  shell-lesson-data/
+README.md  guides/  system-setup-guide.md  vs-code-markdown.md  workshops/
 ~~~
 
 
 Here,
-we can see that the our directory contains **sub-directories** when `ls -F` 
-shows a trailing slash on the name (such as `lessons/`).
+we can see that our directory contains **sub-directories** when `ls -F`
+shows a trailing slash on the name (such as `workshops/`).
 Any names in the output that don't have a classification symbol
 are **files** in the current working directory.
 
@@ -193,16 +191,16 @@ to use a command and what options it accepts:
 **Command:**
 
 ~~~
-$ ls --help
+/workspaces/trainings $ ls --help
 ~~~
-    
+
 
 2. We can read its manual with `man` (available on Linux and macOS):
 
 **Command:**
 
 ~~~
-$ man ls
+/workspaces/trainings $ man ls
 ~~~
     
 
@@ -219,7 +217,7 @@ information on how to use the command or program.
 **Command:**
 
 ~~~
-$ ls --help
+/workspaces/trainings $ ls --help
 ~~~
 
 **Output (truncated):**
@@ -248,7 +246,7 @@ Mandatory arguments to long options are mandatory for short options, too.
 **Command:**
 
 ~~~
-$ ls -j
+/workspaces/trainings $ ls -j
 ~~~
 
 **Output:**
@@ -265,7 +263,7 @@ The other way to learn about `ls` is to type:
 **Command:**
 
 ~~~
-$ man ls
+/workspaces/trainings $ man ls
 ~~~
 
 **Output (interactive):**
@@ -445,7 +443,7 @@ You can see your username like this:
 **Command:**
 
 ~~~
-$ whoami
+/workspaces/trainings $ whoami
 ~~~
 
 **Output:**
@@ -463,7 +461,7 @@ Each user is given a home directory.  Ours is `/home/codespace`.  To go to your 
 **Command:**
 
 ~~~
-$ cd
+/workspaces/trainings $ cd
 ~~~
 
 **Output:**
@@ -472,14 +470,20 @@ $ cd
 ~~~
 
 Blank.  **Why is there no output?**  A lot of commands work silently in order to keep the terminal from overfilling with status
-messages. 
+messages.
 
-We'll use `pwd` like before to verify our location.
+However, notice that your prompt changed! It now shows your home directory:
+
+~~~
+/home/codespace $
+~~~
+
+We'll use `pwd` to verify our location.
 
 **Command:**
 
 ~~~
-$ pwd
+/home/codespace $ pwd
 ~~~
 
 **Output:**
@@ -495,7 +499,7 @@ To see what's in your home directory, do:
 **Command:**
 
 ~~~
-$ ls
+/home/codespace $ ls
 ~~~
 
 **Output:**
@@ -510,13 +514,13 @@ On Codespaces, there might be a few directories, but, ‼️ **if it is blank, t
 
 #### Differences between Codespaces and other computers
 
-| Platform | Login Directory              | Main place of work | 
+| Platform | Login Directory              | Main place of work |
 |----------|----------------------------- |--------------------|
 | Personal Computer     | Your home directory | Home Directory, Documents, Shared Drive   |
 | HPC Linux Server      | Your home directory | Dedicated Project and Scratch directories |
-| GitHub Codespace      | Codespace Directory | Codespace Directory |
+| GitHub Codespace      | Project Root (/workspaces/trainings) | Project Root |
 
-Notice that for these lessons, we start AND WORK in a different location than other real-world settings.
+Notice that for these lessons, we start AND WORK in the project root, which is different from most real-world settings where you start in your home directory.
 
 ---
 
@@ -527,7 +531,7 @@ Show hidden files by adding the `-a` flag to `ls` (*a* for *all*).
 **Command:**
 
 ~~~
-$ ls -a
+/home/codespace $ ls -a
 ~~~
 
 **Output:**
@@ -557,33 +561,33 @@ You'll see every entry begins with a dot (`.`). These are called "hidden files".
 
 ### Exploring Other Directories
 
-Let's return to our **Codespace Starting Directory**.
+Let's return to our **Project Root**.
 
 **Commands:**
 
 ~~~
-$ cd /workspaces/codespace-shell-novice
-$ pwd
+/home/codespace $ cd /workspaces/trainings
+/workspaces/trainings $ pwd
 ~~~
 
 **Output:**
 
 ~~~
-/workspaces/codespace-shell-novice
+/workspaces/trainings
 ~~~
 
-So far we have shown `ls` being used to list directories by doing `cd directory` first and then doing `ls`.  
+So far we have shown `ls` being used to list directories by doing `cd directory` first and then doing `ls`.
 Not only can we use `ls` on the current working directory, but we can use it to list the contents of a different directory.
-Let's take a look at our `shell-lesson-data` directory by running `ls -F ../shell-lesson-data`,
+Let's take a look at the `shell-novice/shell-lesson-data` directory by running `ls -F workshops/shell-novice/shell-lesson-data`,
 i.e.,
-the command `ls` with the `-F` **option** and the [**argument**][Arguments]  `shell-lesson-data`.
-The argument `shell-lesson-data` tells `ls` that
+the command `ls` with the `-F` **option** and the [**argument**][Arguments]  `workshops/shell-novice/shell-lesson-data`.
+The argument tells `ls` that
 we want a listing of something other than our current working directory:
 
 **Command:**
 
 ~~~
-$ ls -F ../shell-lesson-data
+/workspaces/trainings $ ls -F workshops/shell-novice/shell-lesson-data
 ~~~
 
 
@@ -592,9 +596,8 @@ exercise-data/  north-pacific-gyre/
 ~~~
 
 
-Note that if a directory named `shell-lesson-data` does not exist in your current working directory,
-this command will return an error. Typically, a `shell-lesson-data` directory exists in your
-**Codespace Starting Directory**, which we assume is the current working directory of your bash shell.
+Note that if you are not in the project root `/workspaces/trainings`,
+this command will return an error.
 
 As you may now see, the bash shell strongly depends on
 your files being organized in a hierarchical file system.
@@ -603,7 +606,7 @@ it's possible to put hundreds of files in our home directory,
 just as it's possible to pile hundreds of printed papers on our desk,
 but it's a self-defeating strategy.
 
-Now that we know the `shell-lesson-data` directory is located in our **Codespace Starting Directory**, we
+Now that we know the `shell-lesson-data` directory is located at `workshops/shell-novice/shell-lesson-data`, we
 can do two things.
 
 First, using the same strategy as before, we can look at its contents by passing
@@ -612,7 +615,7 @@ a directory name to `ls`:
 **Command:**
 
 ~~~
-$ ls -F ../shell-lesson-data
+/workspaces/trainings $ ls -F workshops/shell-novice/shell-lesson-data
 ~~~
 
 
@@ -621,9 +624,7 @@ exercise-data/  north-pacific-gyre/
 ~~~
 
 
-Second, we can actually change our location to a different directory, so
-we are no longer located in
-our Codespace directory.
+Second, we can actually change our location to a different directory.
 
 The command to change locations is `cd` followed by a directory name to change our working directory.
 `cd` stands for 'change directory', which is a bit misleading.
@@ -639,8 +640,8 @@ use the following series of commands to get there:
 **Commands:**
 
 ~~~
-$ cd ../shell-lesson-data
-$ cd exercise-data
+/workspaces/trainings $ cd workshops/shell-novice/shell-lesson-data
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data $ cd exercise-data
 ~~~
 
 *(Output is silent)*
@@ -649,28 +650,29 @@ $ cd exercise-data
 These commands will move us into the `shell-lesson-data` directory, then into the `exercise-data` directory.
 You will notice that `cd` doesn't print anything. This is normal.
 Many shell commands will not output anything to the screen when successfully executed.
-But if we run `pwd` after it, we can see that we are now
-in `[WORKSHOP_PATH]/workshops/shell-novice/shell-lesson-data/exercise-data`.
+But notice that your prompt changes to show your new location!
+If we run `pwd` after it, we can confirm that we are now
+in `/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data`.
 
 If we run `ls -F` without arguments now,
-it lists the contents of `[WORKSHOP_PATH]/workshops/shell-novice/shell-lesson-data/exercise-data`,
+it lists the contents of `/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data`,
 because that's where we now are:
 
 **Command:**
 
 ~~~
-$ pwd
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data $ pwd
 ~~~
 
 
 ~~~
-[WORKSHOP_PATH]/workshops/shell-novice/shell-lesson-data/exercise-data
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data
 ~~~
 
 **Command:**
 
 ~~~
-$ ls -F
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data $ ls -F
 ~~~
 
 
@@ -681,33 +683,13 @@ animal-counts/  creatures/  numbers.txt  alkanes/  writing/
 
 We now know how to go down the directory tree (i.e. how to go into a subdirectory),
 but how do we go up (i.e. how do we leave a directory and go into its parent directory)?
-We might try the following:
+
+There is a shortcut in the shell to move up one directory level using `..`. It works as follows:
 
 **Command:**
 
 ~~~
-$ cd ../shell-lesson-data
-~~~
-
-
-~~~
--bash: cd: shell-lesson-data: No such file or directory
-~~~
-
-
-But we get an error! Why is this?
-
-With our methods so far,
-`cd` can only see sub-directories inside your current directory. There are
-different ways to see directories above your current location; we'll start
-with the simplest.
-
-There is a shortcut in the shell to move up one directory level. It works as follows:
-
-**Command:**
-
-~~~
-$ cd ..
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data $ cd ..
 ~~~
 
 
@@ -716,17 +698,18 @@ $ cd ..
 or more succinctly,
 the **parent** of the current directory.
 Sure enough,
-if we run `pwd` after running `cd ..`, we're back in `[WORKSHOP_PATH]/workshops/shell-novice/shell-lesson-data`:
+if we run `pwd` after running `cd ..`, we're back in `/workspaces/trainings/workshops/shell-novice/shell-lesson-data`.
+Notice that your prompt also changed to reflect your new location!
 
 **Command:**
 
 ~~~
-$ pwd
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data $ pwd
 ~~~
 
 
 ~~~
-[WORKSHOP_PATH]/workshops/shell-novice/shell-lesson-data/
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data
 ~~~
 
 
@@ -736,7 +719,7 @@ to display it, we can add the `-a` option to `ls -F`:
 **Command:**
 
 ~~~
-$ ls -F -a
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data $ ls -F -a
 ~~~
 
 
@@ -747,7 +730,7 @@ $ ls -F -a
 
 `-a` stands for 'show all' (including hidden files);
 it forces `ls` to show us file and directory names that begin with `.`,
-such as `..` (which, if we're in `/workspaces/codespace-shell-novice`, refers to the `/workspaces` directory).
+such as `..` (which, if we're in `/workspaces/trainings/workshops/shell-novice/shell-lesson-data`, refers to the `/workspaces/trainings/workshops/shell-novice` directory).
 As you can see,
 it also displays another special directory that's just called `.`,
 which means 'the current working directory'.
@@ -790,12 +773,12 @@ we're looking for, we can use `pwd` and then extract the piece we need
 to move to `shell-lesson-data`.
 
 ~~~
-$ pwd
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data $ pwd
 ~~~
 
 
 ~~~
-[WORKSHOP_PATH]/workshops/shell-novice/shell-lesson-data
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data
 ~~~
 
 
@@ -805,17 +788,17 @@ Run `pwd` and `ls -F` to ensure that we're in the directory we expect.
 >
 > Then `cd` into the `exercise-data/creatures` directory
 > ~~~
-> $ cd exercise-data/creatures
+> /workspaces/trainings/workshops/shell-novice/shell-lesson-data $ cd exercise-data/creatures
 > ~~~
 
 >
 > Now if you run
 > ~~~
-> $ cd -
+> /workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/creatures $ cd -
 > ~~~
 
-> you'll see you're back in `[WORKSHOP_PATH]/workshops/shell-novice/shell-lesson-data`.
-> Run `cd -` again and you're back in `[WORKSHOP_PATH]/workshops/shell-novice/shell-lesson-data/exercise-data/creatures`
+> you'll see you're back in `/workspaces/trainings/workshops/shell-novice/shell-lesson-data`.
+> Run `cd -` again and you're back in `/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/creatures`
 
 
 ### Exercises
@@ -911,7 +894,7 @@ Consider the command below as a general example of a command,
 which we will dissect into its component parts:
 
 ~~~
-$ ls -F /
+/workspaces/trainings $ ls -F /
 ~~~
 
 ![General syntax of a shell command](../fig/shell_command_syntax.svg)
@@ -937,19 +920,19 @@ For example, `ls -s` will display the size of files and directories alongside th
 while `ls -S` will sort the files and directories by size, as shown below:
 
 ~~~
-$ cd [WORKSHOP_PATH]/workshops/shell-novice/shell-lesson-data
-$ ls -s exercise-data
+/workspaces/trainings $ cd workshops/shell-novice/shell-lesson-data
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data $ ls -s exercise-data
 total 28
  4 animal-counts   4 creatures  12 numbers.txt   4 alkanes   4 writing
 ~~~
 
 
-Note that the sizes returned by `ls -s` are in *blocks*. 
+Note that the sizes returned by `ls -s` are in *blocks*.
 As these are defined differently for different operating systems,
 you may not obtain the same figures as in the example.
 
 ~~~
-$ ls -S exercise-data
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data $ ls -S exercise-data
 animal-counts  creatures  alkanes  writing  numbers.txt
 ~~~
 
@@ -959,7 +942,7 @@ of files and directories in the root directory `/`.
 An example of the output you might get from the above command is given below:
 
 ~~~
-$ ls -F /
+/workspaces/trainings $ ls -F /
 ~~~
 
 
@@ -996,7 +979,7 @@ Now in her current directory `shell-lesson-data`,
 Nelle can see what files she has using the command:
 
 ~~~
-$ ls north-pacific-gyre/
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data $ ls north-pacific-gyre/
 ~~~
 
 
@@ -1005,7 +988,7 @@ but she can let the shell do most of the work through what is called **tab compl
 If she types:
 
 ~~~
-$ ls nor
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data $ ls nor
 ~~~
 
 
@@ -1013,7 +996,7 @@ and then presses <kbd>Tab</kbd> (the tab key on her keyboard),
 the shell automatically completes the directory name for her:
 
 ~~~
-$ ls north-pacific-gyre/
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data $ ls north-pacific-gyre/
 ~~~
 
 
@@ -1026,7 +1009,7 @@ the shell will append 'goo' since all files that start with 'g' share
 the first three characters 'goo'.
 
 ~~~
-$ ls north-pacific-gyre/goo
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data $ ls north-pacific-gyre/goo
 ~~~
 
 <a id="bottom"></a>

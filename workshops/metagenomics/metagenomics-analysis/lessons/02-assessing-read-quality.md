@@ -66,11 +66,11 @@ We can view the first complete read in one of the files from our dataset using `
 the first four lines. But we have to decompress one of the files first.
 
 ~~~
-$ cd ../../dc_workshop/data/untrimmed_fastq/
+/workspaces/trainings $ cd dc_workshop/data/untrimmed_fastq/
 
-$ gunzip JP4D_R1.fastq.gz
+/workspaces/trainings/dc_workshop/data/untrimmed_fastq $ gunzip JP4D_R1.fastq.gz
 
-$ head -n 4 JP4D_R1.fastq
+/workspaces/trainings/dc_workshop/data/untrimmed_fastq $ head -n 4 JP4D_R1.fastq
 ~~~
 
 
@@ -156,11 +156,11 @@ our colleagues and our future self. FastQC has not been activated in the (base) 
 this Codespace instance came with an environment called metagenomics. We need to activate
 it in order to start using FastQC. 
 
-We will use [Conda](https://docs.conda.io/en/latest/) as our environment manager. 
-Conda is an open-source package and environment management system that runs on Windows, 
-macOS and Linux. Conda environments are activated with the `conda activate` direction:  
+We will use [Conda](https://docs.conda.io/en/latest/) as our environment manager.
+Conda is an open-source package and environment management system that runs on Windows,
+macOS and Linux. Conda environments are activated with the `conda activate` direction:
 ~~~
-$ conda activate metagenomics  
+/workspaces/trainings/dc_workshop/data/untrimmed_fastq $ conda activate metagenomics
 ~~~
 
 
@@ -173,7 +173,7 @@ After the environment has been activated, a label is shown before the `$` sign.
 Now, if we call FastQC, a long help page will be displayed on our screen.
 
 ~~~
-$ fastqc -h 
+/workspaces/trainings/dc_workshop/data/untrimmed_fastq $ fastqc -h
 ~~~
 
 
@@ -245,7 +245,7 @@ The FastQC tool produces several other diagnostic plots to assess sample quality
 We will now assess the quality of the reads that we downloaded. First, make sure you're still in the `untrimmed_fastq` directory.
 
 ~~~
-$ cd ../../dc_workshop/data/untrimmed_fastq/ 
+/workspaces/trainings $ cd dc_workshop/data/untrimmed_fastq/
 ~~~
 
 
@@ -267,7 +267,7 @@ FastQC can accept multiple file names as input, and on both zipped and unzipped 
 so we can use the `*.fastq*` wildcard to run FastQC on all FASTQ files in this directory.
 
 ~~~
-$ fastqc *.fastq* 
+/workspaces/trainings/dc_workshop/data/untrimmed_fastq $ fastqc *.fastq*
 ~~~
 
 
@@ -301,10 +301,10 @@ $
 
 
 The FastQC program has created several new files within our
-`data/untrimmed_fastq/` directory. 
+`data/untrimmed_fastq/` directory.
 
 ~~~
-$ ls 
+/workspaces/trainings/dc_workshop/data/untrimmed_fastq $ ls
 ~~~
 
 
@@ -327,9 +327,9 @@ will move these
 output files into a new directory within our `results/` directory.
 
 ~~~
-$ mkdir -p ../../dc_workshop/results/fastqc_untrimmed_reads 
-$ mv *.zip ../../dc_workshop/results/fastqc_untrimmed_reads/ 
-$ mv *.html ../../dc_workshop/results/fastqc_untrimmed_reads/ 
+/workspaces/trainings/dc_workshop/data/untrimmed_fastq $ mkdir -p ../../results/fastqc_untrimmed_reads
+/workspaces/trainings/dc_workshop/data/untrimmed_fastq $ mv *.zip ../../results/fastqc_untrimmed_reads/
+/workspaces/trainings/dc_workshop/data/untrimmed_fastq $ mv *.html ../../results/fastqc_untrimmed_reads/
 ~~~
 
 
@@ -337,7 +337,7 @@ Now we can navigate into this results directory and do some closer
 inspection of our output files.
 
 ~~~
-$ cd ../../dc_workshop/results/fastqc_untrimmed_reads/ 
+/workspaces/trainings/dc_workshop/data/untrimmed_fastq $ cd ../../results/fastqc_untrimmed_reads/
 ~~~
 
 
@@ -439,8 +439,8 @@ in your terminal program that is connected to your Codespace instance
 our results subdirectory.   
 
 ~~~
-$ cd ../../dc_workshop/results/fastqc_untrimmed_reads/ 
-$ ls 
+/workspaces/trainings/dc_workshop/data/untrimmed_fastq $ cd ../../results/fastqc_untrimmed_reads/
+/workspaces/trainings/dc_workshop/results/fastqc_untrimmed_reads $ ls
 ~~~
 
 
@@ -459,7 +459,7 @@ to decompress these files. Let's try doing them all at once using a
 wildcard.
 
 ~~~
-$ unzip *.zip 
+/workspaces/trainings/dc_workshop/results/fastqc_untrimmed_reads $ unzip *.zip
 ~~~
 
 
@@ -482,7 +482,7 @@ our `.zip` files. Let's see what that looks like, and then we'll
 discuss what we're doing with each line of our loop.
 
 ~~~
-$ for filename in *.zip
+/workspaces/trainings/dc_workshop/results/fastqc_untrimmed_reads $ for filename in *.zip
 > do
 > unzip $filename
 > done
@@ -533,9 +533,9 @@ store all of the different output that is produced by FastQC. There
 are a lot of files here. We're going to focus on the 
 `summary.txt` file. 
 
-If you list the files in our directory, now you will see the following: 
+If you list the files in our directory, now you will see the following:
 ~~~
-$ ls 
+/workspaces/trainings/dc_workshop/results/fastqc_untrimmed_reads $ ls
 ~~~
 
 
@@ -551,10 +551,10 @@ JC1A_R2_fastqc.zip              JP4D_R2_fastqc.zip
 
 The `.html` files and the uncompressed `.zip` files are still present,
 but now we also have a new directory for each sample. We can 
-see that it's a directory if we use the `-F` flag for `ls`. 
+see that it's a directory if we use the `-F` flag for `ls`.
 
 ~~~
-$ ls -F 
+/workspaces/trainings/dc_workshop/results/fastqc_untrimmed_reads $ ls -F
 ~~~
 
 
@@ -571,7 +571,7 @@ JC1A_R2_fastqc.zip              JP4D_R2_fastqc.zip
 Let's see what files are present within one of these output directories.
 
 ~~~
-$ ls -F JC1A_R1_fastqc/ 
+/workspaces/trainings/dc_workshop/results/fastqc_untrimmed_reads $ ls -F JC1A_R1_fastqc/
 ~~~
 
 
@@ -580,10 +580,10 @@ fastqc_data.txt  fastqc.fo  fastqc_report.html	Icons/	Images/  summary.txt
 ~~~
 
 
-Use `less` to preview the `summary.txt` file for this sample. 
+Use `less` to preview the `summary.txt` file for this sample.
 
 ~~~
-$ less JC1A_R1_fastqc/summary.txt 
+/workspaces/trainings/dc_workshop/results/fastqc_untrimmed_reads $ less JC1A_R1_fastqc/summary.txt
 ~~~
 
 
@@ -613,8 +613,8 @@ using the `cat` command. We'll call this `fastqc_summaries.txt` and store
 it to `../../dc_workshop/docs`.</mark>
 
 ~~~
-$ mkdir -p ../../dc_workshop/docs
-$ cat */summary.txt > ../../dc_workshop/docs/fastqc_summaries.txt
+/workspaces/trainings/dc_workshop/results/fastqc_untrimmed_reads $ mkdir -p ../../docs
+/workspaces/trainings/dc_workshop/results/fastqc_untrimmed_reads $ cat */summary.txt > ../../docs/fastqc_summaries.txt
 ~~~
 
 

@@ -30,16 +30,16 @@ To do this, we could go to our now familiar Bash terminal, but RStudio has an in
 
 [Kraken-biom](https://github.com/smdabdoub/kraken-biom) is a program that creates BIOM tables from the Kraken output.
 
-In order to run Kraken-biom, we have to move to 
-the folder where our taxonomic data files are located: 
+In order to run Kraken-biom, we have to move to
+the folder where our taxonomic data files are located:
 ~~~
-$ cd ../../dc_workshop/taxonomy
-~~~~
+/workspaces/trainings/dc_workshop/taxonomy/mags_taxonomy $ cd ..
+~~~
 
 
-First, we will visualize the content of our directory by the `ls` command.  
+First, we will visualize the content of our directory by the `ls` command.
 ~~~
-$ ls
+/workspaces/trainings/dc_workshop/taxonomy $ ls
 ~~~
 
 ~~~
@@ -49,13 +49,13 @@ JC1A.kraken  JC1A.report  JP41.report  JP4D.kraken  JP4D.report  mags_taxonomy
 
 The `kraken-biom` program is installed inside our `metagenomics` environment, so let us activate it.
 ~~~
-$ conda activate metagenomics 
+/workspaces/trainings/dc_workshop/taxonomy $ conda activate metagenomics
 ~~~
 
 
 Let us take a look at the different flags that `kraken-biom` has:
 ~~~
-$ kraken-biom -h                  
+/workspaces/trainings/dc_workshop/taxonomy $ kraken-biom -h
 ~~~
 
 
@@ -77,7 +77,7 @@ from Kraken: the `.reports`.
 
 With the following command, we will create a table in [Biom](https://biom-format.org/) format called `cuatroc.biom`. We will include the two samples we have been working with (`JC1A` and `JP4D`) and a third one (`JP41`) to be able to perform specific analyses later on.
 ~~~
-$ kraken-biom JC1A.report JP4D.report JP41.report --fmt json -o cuatroc.biom
+/workspaces/trainings/dc_workshop/taxonomy $ kraken-biom JC1A.report JP4D.report JP41.report --fmt json -o cuatroc.biom
 ~~~
 
 

@@ -42,7 +42,7 @@ Trimmomatic has a variety of options to accomplish its task.
 If we run the following command, we can see some of its options:
 
 ~~~
-$ trimmomatic
+/workspaces/trainings/dc_workshop/data/untrimmed_fastq $ trimmomatic
 ~~~
 
 
@@ -104,7 +104,7 @@ and options, see [the Trimmomatic manual](http://www.usadellab.org/cms/uploads/s
 However, a complete command for Trimmomatic will look something like the command below. This command is an example and will not work, as we do not have the files it refers to (and our Codespace only has 2 threads):
 
 ~~~
-$ trimmomatic PE -threads 4 SRR_1056_1.fastq SRR_1056_2.fastq \
+/workspaces/trainings/dc_workshop/data/untrimmed_fastq $ trimmomatic PE -threads 4 SRR_1056_1.fastq SRR_1056_2.fastq \
               SRR_1056_1.trimmed.fastq SRR_1056_1un.trimmed.fastq \
               SRR_1056_2.trimmed.fastq SRR_1056_2un.trimmed.fastq \
               ILLUMINACLIP:SRR_adapters.fa SLIDINGWINDOW:4:20
@@ -131,17 +131,17 @@ In this example, we have told Trimmomatic:
 > ## Multi-line for long commands 
 > Some of the commands we ran in this lesson are long! To separate code chunks onto separate lines
 >  When typing into your terminal one command with long input or many modifying parameters, you can
->   use the `\` character to make your code more readable. For example, let us use multi lines 
->   with the echo command. With `\` it is possible to use several lines to print "hello world" 
+>   use the `\` character to make your code more readable. For example, let us use multi lines
+>   with the echo command. With `\` it is possible to use several lines to print "hello world"
 >   on your terminal.
 > ~~~
-> $ echo he\
-> $ llo\
-> $ world
+> /workspaces/trainings/dc_workshop/data/untrimmed_fastq $ echo he\
+> > llo\
+> > world
 > ~~~
-> 
+>
 > ~~~
-> $ hello world
+> hello world
 > ~~~
 > 
 > Note: Some terminals only wait a few seconds for you to keep typing. In that case, you may write 
@@ -157,26 +157,26 @@ Now, we will run Trimmomatic on our data. Navigate to your
 located in the `untrimmed_fastq/` directory:
 
 ~~~
-$ cd ../../dc_workshop/data/untrimmed_fastq
-$ pwd
+/workspaces/trainings/dc_workshop/results/fastqc_untrimmed_reads $ cd ../../data/untrimmed_fastq
+/workspaces/trainings/dc_workshop/data/untrimmed_fastq $ pwd
 ~~~
 
 <p style="text-align: right;"><a href=".whereami/PROJ_ROOT.workshops.metagenomics.dc_workshop.data.untrimmed_fastq" target="_new">🧭</a></p>
 
 ~~~
-$ [PROJ_ROOT]/workshops/metagenomics/dc_workshop/data/untrimmed_fastq
+/workspaces/trainings/dc_workshop/data/untrimmed_fastq
 ~~~
 
 
 You should have only four files in this directory. Those files correspond
 to the files of forward and reverse reads from samples JC1A and JP4D.
 ~~~
-$ ls
+/workspaces/trainings/dc_workshop/data/untrimmed_fastq $ ls
 ~~~
 
 
 ~~~
-$ JC1A_R1.fastq.gz  JC1A_R2.fastq.gz  JP4D_R1.fastq  JP4D_R2.fastq.gz  TruSeq3-PE.fa   
+JC1A_R1.fastq.gz  JC1A_R2.fastq.gz  JP4D_R1.fastq  JP4D_R2.fastq.gz  TruSeq3-PE.fa
 ~~~
 
 
@@ -190,18 +190,18 @@ Phred score is below 20 (like in our example above). We will also
 discard any reads that do not have at least 25 bases remaining after
 this trimming step. This command will take a few minutes to run.
 
-Before, we unzipped one of our files to work with it. Let us compress 
+Before, we unzipped one of our files to work with it. Let us compress
 the file corresponding to the sample `JP4D` again before we run Trimmomatic.
 ~~~
-gzip JP4D_R1.fastq
+/workspaces/trainings/dc_workshop/data/untrimmed_fastq $ gzip JP4D_R1.fastq
 ~~~
 
- 
+
 ~~~
-$ trimmomatic PE JP4D_R1.fastq.gz JP4D_R2.fastq.gz \
+/workspaces/trainings/dc_workshop/data/untrimmed_fastq $ trimmomatic PE JP4D_R1.fastq.gz JP4D_R2.fastq.gz \
 JP4D_R1.trim.fastq.gz  JP4D_R1un.trim.fastq.gz \
 JP4D_R2.trim.fastq.gz  JP4D_R2un.trim.fastq.gz \
-SLIDINGWINDOW:4:20 MINLEN:35 ILLUMINACLIP:TruSeq3-PE.fa:2:40:15 
+SLIDINGWINDOW:4:20 MINLEN:35 ILLUMINACLIP:TruSeq3-PE.fa:2:40:15
 ~~~
 
 
@@ -240,7 +240,7 @@ We can confirm that we have our output files:
 <p style="text-align: right;"><a href=".whereami/PROJ_ROOT.workshops.metagenomics.dc_workshop.data.untrimmed_fastq" target="_new">🧭</a></p>
 
 ~~~
-$ ls JP4D*
+/workspaces/trainings/dc_workshop/data/untrimmed_fastq $ ls JP4D*
 ~~~
 
 
@@ -255,7 +255,7 @@ input file because we have removed reads. We can confirm this with this
 command:
 
 ~~~
-$ ls -l -h JP4D*
+/workspaces/trainings/dc_workshop/data/untrimmed_fastq $ ls -l -h JP4D*
 ~~~
 
 
@@ -274,17 +274,17 @@ We have just successfully run Trimmomatic on one of our FASTQ files!
 However, there is some bad news. Trimmomatic can only operate on
 one sample at a time, and we have more than one sample. The good news
 is that we can use a `for` loop to iterate through our sample files
-quickly! 
+quickly!
 
 ~~~
-$ for infile in *_R1.fastq.gz
-do
-base=$(basename ${infile} _R1.fastq.gz)
-trimmomatic PE ${infile} ${base}_R2.fastq.gz \
-${base}_R1.trim.fastq.gz ${base}_R1un.trim.fastq.gz \
-${base}_R2.trim.fastq.gz ${base}_R2un.trim.fastq.gz \
-SLIDINGWINDOW:4:20 MINLEN:35 ILLUMINACLIP:TruSeq3-PE.fa:2:40:15
-done
+/workspaces/trainings/dc_workshop/data/untrimmed_fastq $ for infile in *_R1.fastq.gz
+> do
+> base=$(basename ${infile} _R1.fastq.gz)
+> trimmomatic PE ${infile} ${base}_R2.fastq.gz \
+> ${base}_R1.trim.fastq.gz ${base}_R1un.trim.fastq.gz \
+> ${base}_R2.trim.fastq.gz ${base}_R2un.trim.fastq.gz \
+> SLIDINGWINDOW:4:20 MINLEN:35 ILLUMINACLIP:TruSeq3-PE.fa:2:40:15
+> done
 ~~~
 
 
@@ -294,7 +294,7 @@ Trimmomatic to run for each of our four input files. Once it is done,
 take a look at your directory contents. You will notice that even though we ran Trimmomatic on file `JP4D` before running the for loop, there is only one set of files for it. Because we matched the ending `_R1.fastq.gz`, we re-ran Trimmomatic on this file, overwriting our first results. That is ok, but it is good to be aware that it happened.
 
 ~~~
-$ ls
+/workspaces/trainings/dc_workshop/data/untrimmed_fastq $ ls
 ~~~
 
 
@@ -314,11 +314,10 @@ control process! Before we move on, let us move our trimmed FASTQ files
 to a new subdirectory within our `data/` directory.
 
 ~~~
-$ cd ../../dc_workshop/data/untrimmed_fastq
-$ mkdir ../trimmed_fastq
-$ mv *.trim* ../trimmed_fastq
-$ cd ../trimmed_fastq
-$ ls
+/workspaces/trainings/dc_workshop/data/untrimmed_fastq $ mkdir ../trimmed_fastq
+/workspaces/trainings/dc_workshop/data/untrimmed_fastq $ mv *.trim* ../trimmed_fastq
+/workspaces/trainings/dc_workshop/data/untrimmed_fastq $ cd ../trimmed_fastq
+/workspaces/trainings/dc_workshop/data/trimmed_fastq $ ls
 ~~~
 
 
@@ -342,10 +341,10 @@ JC1A_R2un.trim.fastq.gz  JP4D_R2un.trim.fastq.gz
 > ~~~
 > $ scp codespace@ec2-34-203-203-131.compute-1.amazonaws.com:../../dc_workshop/data/trimmed_fastq/*.html ~/Desktop/fastqc_html/trimmed
 > ~~~
-> 
-> 
+>
+>
 > ~~~
-> $ fastqc ../../dc_workshop/data/trimmed_fastq/*.fastq*
+> /workspaces/trainings/dc_workshop/data/trimmed_fastq $ fastqc *.fastq*
 > ~~~
 > 
 > 

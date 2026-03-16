@@ -68,12 +68,12 @@ documenting your genomics project. Your future self will thank you.
 
 In this exercise, we will set up a file system for the project we will be working on during this workshop.  
 
-We will start by creating a directory that we can use for the rest of the workshop. 
+We will start by creating a directory that we can use for the rest of the workshop.
 First, navigate to your home directory. Then, confirm that you are in the correct directory using the `pwd` command.
 
 ~~~
-$ cd ~
-$ pwd
+/home/codespace/dc_workshop/data/untrimmed_fastq $ cd ~
+/home/codespace $ pwd
 ~~~
 
 You should see the output (your home directory path):
@@ -100,10 +100,10 @@ You should see the output (your home directory path):
 
 Use `ls -R` to verify that you have created these directories. The `-R` option for `ls` stands for recursive. This option causes
 `ls` to return the contents of each subdirectory within the directory
-iteratively. 
+iteratively.
 
 ~~~
-$ ls -R workshop
+/home/codespace $ ls -R workshop
 ~~~
 
 You should see the following output:
@@ -155,12 +155,12 @@ carried out computational than it is when working at the bench.
 
 The `history` command is a convenient way to document all the
 commands you have used while analyzing and manipulating your project
-files. Let's document the work we have done on our project so far. 
+files. Let's document the work we have done on our project so far.
 
 View the commands that you have used so far during this session using `history`:
 
 ~~~
-$ history
+/home/codespace $ history
 ~~~
 
 The history likely contains many more commands than you have used for the current project. Let's view the last
@@ -168,8 +168,8 @@ several commands that focus on just what we need for this project.
 
 View the last n lines of your history (where n = approximately the last few lines you think relevant). For our example, we will use the last 7:
 
-~~~   
-$ history | tail -n 7
+~~~
+/home/codespace $ history | tail -n 7
 ~~~
 
 > ## Exercise 2: Creating a record of the used commands 
@@ -183,10 +183,10 @@ $ history | tail -n 7
 >
 > **[View Exercise with Solution](.exercises/06-organization/exercise-2.md)**
 You may have noticed that your history contains the `history` command itself. To remove this redundancy
-from our log, let's use the `nano` text editor to fix the file:  
+from our log, let's use the `nano` text editor to fix the file:
 
 ~~~
-$ nano workshop_log_2021_03_25.sh
+/home/codespace $ nano workshop_log_2021_03_25.sh
 ~~~
 
 (Remember to replace the `2021_03_25` with your workshop date.)
@@ -235,12 +235,12 @@ mkdir workshop/results
 ~~~
 
 If you keep this file up to date, you can use it to re-do your work on your project if something happens to your results files. To demonstrate how this works, first delete
-your `workshop` directory and all of its subdirectories. Look at your directory 
-contents to verify the directory is gone. 
+your `workshop` directory and all of its subdirectories. Look at your directory
+contents to verify the directory is gone.
 
 ~~~
-$ rm -r workshop
-$ ls
+/home/codespace $ rm -r workshop
+/home/codespace $ ls
 ~~~
 
 ~~~
@@ -248,11 +248,11 @@ dc_workshop   R   workshop   workshop_log_2021_03_25.sh
 ~~~
 
 Then run your workshop log file as a bash script. You should see the `workshop`
-directory and all of its subdirectories reappear. 
+directory and all of its subdirectories reappear.
 
 ~~~
-$ bash workshop_log_2021_03_25.sh
-$ ls
+/home/codespace $ bash workshop_log_2021_03_25.sh
+/home/codespace $ ls
 ~~~
 
 ~~~

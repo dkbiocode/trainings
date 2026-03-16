@@ -45,14 +45,14 @@ have four result files, which are stored in our `untrimmed_fastq` directory.
 Navigate to your `untrimmed_fastq` directory.
 
 ~~~
-$ cd dc_workshop/data/untrimmed_fastq
+/home/codespace $ cd dc_workshop/data/untrimmed_fastq
 ~~~
 
 We are interested in looking at the FASTQ files in this directory. Remember, gunzipped the fastq.gz files in lesson 1, which replaced all of the .fastq.gz compressed files (binary) with .fastq files (text). We can list
 all files with the `.fastq` extension using the command:
 
 ~~~
-$ ls *.fastq
+/home/codespace/dc_workshop/data/untrimmed_fastq $ ls *.fastq
 ~~~
 
 ~~~
@@ -62,10 +62,10 @@ JC1A_R1.fastq JC1A_R2.fastq JP4D_R1.fastq JP4D_R2.fastq
 The `*` character is a special type of character called a wildcard, which can be used to represent any number of any type of character. 
 Thus, `*.fastq` matches every file that ends with `.fastq`. 
 
-This command: 
+This command:
 
 ~~~
-$ ls *R1.fastq
+/home/codespace/dc_workshop/data/untrimmed_fastq $ ls *R1.fastq
 ~~~
 
 ~~~
@@ -91,7 +91,7 @@ is very useful.
 You can also review your recent commands with the `history` command, by entering:
 
 ~~~
-$ history
+/home/codespace/dc_workshop/data/untrimmed_fastq $ history
 ~~~
 
 to see a numbered list of recent commands. You can reuse one of these commands
@@ -108,7 +108,7 @@ For example, if your history looked like this:
 then you could repeat command #260 by entering:
 
 ~~~
-$ !260
+/home/codespace/dc_workshop/data/untrimmed_fastq $ !260
 ~~~
 
 Type `!` (exclamation point) and then the number of the command from your history.
@@ -122,7 +122,7 @@ contents of directories, but how do we look at the contents of files?
 One way to examine a file is to print out on the screen all of the
 contents using the program `cat`.
 ~~~
-$ cat JC1A_R2.fastq
+/home/codespace/dc_workshop/data/untrimmed_fastq $ cat JC1A_R2.fastq
 ~~~
 
 `cat` is a terrific program, but, as you just saw if you ran the command, when the file is really big (as the files we have), it can
@@ -135,7 +135,7 @@ are identical to the `man` program.
 Enter the following command:
 
 ~~~
-$ less JC1A_R2.fastq
+/home/codespace/dc_workshop/data/untrimmed_fastq $ less JC1A_R2.fastq
 ~~~
 
 Some navigation commands in `less`
@@ -178,7 +178,7 @@ The commands are `head` and `tail` and they let you look at
 the beginning and end of a file, respectively.
 
 ~~~
-$ head JC1A_R2.fastq
+/home/codespace/dc_workshop/data/untrimmed_fastq $ head JC1A_R2.fastq
 ~~~
 
 ~~~
@@ -196,7 +196,7 @@ CGAAAAGCCGCGCGCCGACCTGGGCGTCGAGCGCCGCGCCGCTCCAACGAACGCCAGGCGATCCGAGCGCGGCGGCGATG
 ~~~
 
 ~~~
-$ tail JC1A_R2.fastq
+/home/codespace/dc_workshop/data/untrimmed_fastq $ tail JC1A_R2.fastq
 ~~~
 
 ~~~
@@ -213,10 +213,10 @@ A!@B!BBB@ABAB#########!!!!!!!######
 ~~~
 
 The `-n` option to either of these commands can be used to print the
-first or last `n` lines of a file. 
+first or last `n` lines of a file.
 
 ~~~
-$ head -n 1 JC1A_R2.fastq
+/home/codespace/dc_workshop/data/untrimmed_fastq $ head -n 1 JC1A_R2.fastq
 ~~~
 
 ~~~
@@ -224,7 +224,7 @@ $ head -n 1 JC1A_R2.fastq
 ~~~
 
 ~~~
-$ tail -n 1 JC1A_R2.fastq
+/home/codespace/dc_workshop/data/untrimmed_fastq $ tail -n 1 JC1A_R2.fastq
 ~~~
 
 ~~~
@@ -247,9 +247,9 @@ AAA#>>A#1>AAGGGGGGGG#ABFEFGGHGEFGEGGGEGFHHHGGGGGGGGEEEEEGCG?EGHHHG@CC#??#???FFG#
 > 
 > We can view the first complete read in one of the files our dataset by using `head` to look at
 > the first four lines.
-> 
+>
 > ~~~
-> $ head -n 4 JC1A_R2.fastq
+> /home/codespace/dc_workshop/data/untrimmed_fastq $ head -n 4 JC1A_R2.fastq
 > ~~~
 > 
 > 
@@ -324,11 +324,11 @@ and change the file permissions so that we can read from, but not write to, the 
 
 First, let's make a copy of one of our FASTQ files using the `cp` command. 
 
-Navigate to the `/workspaces/codespace-metagenomics-shell/dc_workshop/data/untrimmed_fastq` directory and enter:
+Navigate to the `dc_workshop/data/untrimmed_fastq` directory and enter:
 
 ~~~
-$ cp JC1A_R2.fastq JC1A_R2-copy.fastq
-$ ls -F
+/home/codespace/dc_workshop/data/untrimmed_fastq $ cp JC1A_R2.fastq JC1A_R2-copy.fastq
+/home/codespace/dc_workshop/data/untrimmed_fastq $ ls -F
 ~~~
 
 ~~~
@@ -344,17 +344,17 @@ The `mkdir` command is used to make a directory. Enter `mkdir`
 followed by a space, then the directory name you want to create.
 
 ~~~
-$ mkdir backup
+/home/codespace/dc_workshop/data/untrimmed_fastq $ mkdir backup
 ~~~
 
 ### Moving / Renaming 
 
 We can now move our backup file to this directory. We can
-move files around using the command `mv`. 
+move files around using the command `mv`.
 
 ~~~
-$ mv JC1A_R2-copy.fastq backup
-$ ls backup
+/home/codespace/dc_workshop/data/untrimmed_fastq $ mv JC1A_R2-copy.fastq backup
+/home/codespace/dc_workshop/data/untrimmed_fastq $ ls backup
 ~~~
  
 ~~~
@@ -364,9 +364,9 @@ JC1A_R2-copy.fastq
 The `mv` command is also how you rename files. Let's rename this file to make it clear that this is a backup.
 
 ~~~
-$ cd backup
-$ mv JC1A_R2-copy.fastq JC1A_R2-backup.fastq
-$ ls
+/home/codespace/dc_workshop/data/untrimmed_fastq $ cd backup
+/home/codespace/dc_workshop/data/untrimmed_fastq/backup $ mv JC1A_R2-copy.fastq JC1A_R2-backup.fastq
+/home/codespace/dc_workshop/data/untrimmed_fastq/backup $ ls
 ~~~
 
 ~~~
@@ -379,10 +379,10 @@ JC1A_R2-backup.fastq
 When we want to remove a file or a directory we use the `rm` command. By default, `rm`will not delete directories.
 You can tell `rm` to delete a directory using the `-r` (recursive) option. 
 
-Let's delete the backup directory we just made. 
+Let's delete the backup directory we just made.
 ~~~
-$ cd ..
-$ rm -r backup
+/home/codespace/dc_workshop/data/untrimmed_fastq/backup $ cd ..
+/home/codespace/dc_workshop/data/untrimmed_fastq $ rm -r backup
 ~~~
 
 This will delete not only the directory, but all files within the directory. If you have write-protected files in the directory, 
@@ -404,7 +404,7 @@ just nicely put the files in the Trash. They're really gone.
 
 > ## Exercise 1: Make backup folder with write-protected permissions
 >
-> Starting in the `/workspaces/codespace-metagenomics-shell/dc_workshop/data/untrimmed_fastq` directory, do the following:
+> Starting in the `/workspaces/trainings/dc_workshop/data/untrimmed_fastq` directory, do the following:
 > 1. Make sure that you have deleted your backup directory and all files it contains.  
 > 2. Create a copy of each of your FASTQ files. (Note: You'll need to do this individually for each of the four FASTQ files. We haven't
 > learned yet how to do this

@@ -38,20 +38,20 @@ We've also learned how to use `cd` to change locations and `ls` to list the cont
 of a directory. Now we're going to learn some additional commands for moving around 
 within our file system.
 
-Use the commands we've learned so far to navigate to the `dc_workshop/data/untrimmed_fastq` directory, if you're not already there. 
+Use the commands we've learned so far to navigate to the `dc_workshop/data/untrimmed_fastq` directory, if you're not already there.
 
 ~~~
-$ cd
-$ cd dc_workshop
-$ cd data
-$ cd untrimmed_fastq
+/home/codespace/dc_workshop/data/untrimmed_fastq $ cd
+/home/codespace $ cd dc_workshop
+/home/codespace/dc_workshop $ cd data
+/home/codespace/dc_workshop/data $ cd untrimmed_fastq
 ~~~
 
-What if we want to move back up and out of this directory and to our top level 
+What if we want to move back up and out of this directory and to our top level
 directory? Can we type `cd dc_workshop`? Try it and see what happens.
 
 ~~~
-$ cd dc_workshop
+/home/codespace/dc_workshop/data/untrimmed_fastq $ cd dc_workshop
 ~~~
 
 ~~~
@@ -62,10 +62,10 @@ Your computer looked for a directory or file called `dc_workshop` within the
 directory you were already in. It didn't know you wanted to look at a directory level
 above the one you were located in. 
 
-We have a special command to tell the computer to move us back or up one directory level. 
+We have a special command to tell the computer to move us back or up one directory level.
 
 ~~~
-$ cd ..
+/home/codespace/dc_workshop/data/untrimmed_fastq $ cd ..
 ~~~
 
 
@@ -73,19 +73,19 @@ Now we can use `pwd` to make sure that we are in the directory we intended to na
 to, and `ls` to check that the contents of the directory are correct.
 
 ~~~
-$ pwd
+/home/codespace/dc_workshop/data $ pwd
 ~~~
 
 ~~~
 /home/codespace/dc_workshop/data
 ~~~
 
-From this output, we can see that `..` did indeed take us back one level in our file system. 
+From this output, we can see that `..` did indeed take us back one level in our file system.
 
 You can chain these together to move several levels:
 
 ~~~
-$ cd ../../..
+/home/codespace/dc_workshop/data $ cd ../../..
 ~~~
 
 > ## Exercise 1: Finding hidden directories
@@ -106,10 +106,10 @@ $ cd ../../..
 
 Another option that the `ls` command has is to check the permissions on a file. If we are organized and we have a folder with the backup of all our files, we can rescue files that we have accidentally deleted, for example, but just because we have two copies doesn't make us safe. We can still accidentally delete or overwrite both copies. To make sure we can't accidentally mess up a file, we're going to change the permissions on the file so that we're only allowed to read (i.e. view) the file, not write to it (i.e. make new changes).
 
-View the current permissions on a file using the `-l` (long) flag for the `ls` command. 
+View the current permissions on a file using the `-l` (long) flag for the `ls` command.
 
 ~~~
-$ ls -l
+/home/codespace/dc_workshop/.hidden $ ls -l
 ~~~
 
 ~~~
@@ -130,11 +130,11 @@ indicates that you have permission to write to (i.e. make changes to) the file, 
 don't have permission to carry out the ability encoded by that space (this is the space where `x` or executable ability is stored, we'll 
 talk more about this in [a later lesson](https://carpentries-lab.github.io/metagenomics-shell/05-writing-scripts/index.html)).
 
-Our goal for now is to change permissions on this file so that you no longer have `w` or write permissions. We can do this using the `chmod` (change mode) command and subtracting (`-`) the write permission `-w`. 
+Our goal for now is to change permissions on this file so that you no longer have `w` or write permissions. We can do this using the `chmod` (change mode) command and subtracting (`-`) the write permission `-w`.
 
 ~~~
-$ chmod -w youfoundit.txt 
-$ ls -l 
+/home/codespace/dc_workshop/.hidden $ chmod -w youfoundit.txt
+/home/codespace/dc_workshop/.hidden $ ls -l
 ~~~
 
 ~~~
@@ -152,8 +152,8 @@ hierarchy. Navigate to the home directory, then enter the `pwd`
 command.
 
 ~~~
-$ cd  
-$ pwd  
+/home/codespace/dc_workshop/.hidden $ cd
+/home/codespace $ pwd
 ~~~
 
 You will see:
@@ -172,19 +172,19 @@ directory in `home` which is a directory in `/`.
 Now enter the following command:
 
 ~~~
-$ cd /home/codespace/dc_workshop/.hidden
+/home/codespace $ cd /home/codespace/dc_workshop/.hidden
 ~~~
 
-This jumps forward multiple levels to the `.hidden` directory. 
-Now go back to the home directory. 
+This jumps forward multiple levels to the `.hidden` directory.
+Now go back to the home directory.
 
 ~~~
-$ cd 
+/home/codespace/dc_workshop/.hidden $ cd
 ~~~
 
 And then
 ~~~
-$ cd dc_workshop/.hidden
+/home/codespace $ cd dc_workshop/.hidden
 ~~~
 
 

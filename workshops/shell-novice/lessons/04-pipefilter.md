@@ -40,7 +40,7 @@ The `.pdb` extension indicates that these files are in Protein Data Bank format,
 a simple text format that specifies the type and position of each atom in the molecule.
 
 ~~~
-$ ls
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/alkanes $ ls
 ~~~
 
 ~~~
@@ -51,7 +51,7 @@ ethane.pdb    octane.pdb     propane.pdb
 Let's run an example command:
 
 ~~~
-$ wc cubane.pdb
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/alkanes $ wc cubane.pdb
 ~~~
 
 ~~~
@@ -66,7 +66,7 @@ If we run the command `wc *.pdb`, the `*` in `*.pdb` matches zero or more charac
 so the shell turns `*.pdb` into a list of all `.pdb` files in the current directory:
 
 ~~~
-$ wc *.pdb
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/alkanes $ wc *.pdb
 ~~~
 
 ~~~
@@ -85,7 +85,7 @@ If we run `wc -l` instead of just `wc`,
 the output shows only the number of lines per file:
 
 ~~~
-$ wc -l *.pdb
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/alkanes $ wc -l *.pdb
 ~~~
 
 ~~~
@@ -130,7 +130,7 @@ but what if there were 6000?
 Our first step toward a solution is to run the command:
 
 ~~~
-$ wc -l *.pdb > lengths.txt
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/alkanes $ wc -l *.pdb > lengths.txt
 ~~~
 
 The greater than symbol, `>`, tells the shell to **redirect** the command's output to a
@@ -143,7 +143,7 @@ Thus, **redirect** commands require caution.
 `ls lengths.txt` confirms that the file exists:
 
 ~~~
-$ ls lengths.txt
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/alkanes $ ls lengths.txt
 ~~~
 
 ~~~
@@ -157,7 +157,7 @@ There's only one file in this case,
 so `cat` just shows us what it contains:
 
 ~~~
-$ cat lengths.txt
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/alkanes $ cat lengths.txt
 ~~~
 
 ~~~
@@ -232,7 +232,7 @@ This does *not* change the file;
 instead, it sends the sorted result to the screen:
 
 ~~~
-$ sort -n lengths.txt
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/alkanes $ sort -n lengths.txt
 ~~~
 
 ~~~
@@ -253,8 +253,8 @@ Once we've done that,
 we can run another command called `head` to get the first few lines in `sorted-lengths.txt`:
 
 ~~~
-$ sort -n lengths.txt > sorted-lengths.txt
-$ head -n 1 sorted-lengths.txt
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/alkanes $ sort -n lengths.txt > sorted-lengths.txt
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/alkanes $ head -n 1 sorted-lengths.txt
 ~~~
 
 ~~~
@@ -363,7 +363,7 @@ those intermediate files make it hard to follow what's going on.
 We can make it easier to understand by running `sort` and `head` together:
 
 ~~~
-$ sort -n lengths.txt | head -n 1
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/alkanes $ sort -n lengths.txt | head -n 1
 ~~~
 
 ~~~
@@ -386,7 +386,7 @@ This removes the need for any intermediate files.
 We'll start by using a pipe to send the output of `wc` to `sort`:
 
 ~~~
-$ wc -l *.pdb | sort -n
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/alkanes $ wc -l *.pdb | sort -n
 ~~~
 
 ~~~
@@ -402,7 +402,7 @@ $ wc -l *.pdb | sort -n
 We can then send that output through another pipe, to `head`, so that the full pipeline becomes:
 
 ~~~
-$ wc -l *.pdb | sort -n | head -n 1
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/alkanes $ wc -l *.pdb | sort -n | head -n 1
 ~~~
 
 ~~~
@@ -584,8 +584,8 @@ and created 17 files in the `north-pacific-gyre` directory described earlier.
 As a quick check, starting from the `shell-lesson-data` directory, Nelle types:
 
 ~~~
-$ cd north-pacific-gyre
-$ wc -l *.txt
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data $ cd north-pacific-gyre
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/north-pacific-gyre $ wc -l *.txt
 ~~~
 
 The output is 18 lines that look like this:
@@ -603,7 +603,7 @@ The output is 18 lines that look like this:
 Now she types this:
 
 ~~~
-$ wc -l *.txt | sort -n | head -n 5
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/north-pacific-gyre $ wc -l *.txt | sort -n | head -n 5
 ~~~
 
 ~~~
@@ -623,7 +623,7 @@ Before re-running that sample,
 she checks to see if any files have too much data:
 
 ~~~
-$ wc -l *.txt | sort -n | tail -n 5
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/north-pacific-gyre $ wc -l *.txt | sort -n | tail -n 5
 ~~~
 
 ~~~
@@ -641,7 +641,7 @@ her lab uses 'Z' to indicate samples with missing information.
 To find others like it, she does this:
 
 ~~~
-$ ls *Z.txt
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/north-pacific-gyre $ ls *Z.txt
 ~~~
 
 ~~~

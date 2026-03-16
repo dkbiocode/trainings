@@ -32,16 +32,16 @@
 
 We have been able to do much work with existing files, but what if we want to write our own files? We are not going to type in a FASTA file, but we will see as we go through other tutorials; there are many reasons we will want to write a file or edit an existing file.
 
-We will use a text editor called Nano to add text to files. We are going to create a file to take notes about what we have been doing with the data files in `/workspaces/codespace-metagenomics-shell/dc_workshop/data/untrimmed_fastq`.
+We will use a text editor called Nano to add text to files. We are going to create a file to take notes about what we have been doing with the data files in `dc_workshop/data/untrimmed_fastq`.
 
 Taking notes is good practice when working in bioinformatics. We can create a file called a `README.txt` that describes the data files in the directory or documents how the files in that directory were generated. As the name suggests, it is a file that others should read to understand the information in that directory.
 
-Let's change our working directory to `/workspaces/codespace-metagenomics-shell/dc_workshop/data/untrimmed_fastq` using `cd`,
+Let's change our working directory to `dc_workshop/data/untrimmed_fastq` using `cd`,
 then run `nano` to create a file called `README.txt`:
 
 ~~~
-$ cd /workspaces/codespace-metagenomics-shell/dc_workshop/data/untrimmed_fastq
-$ nano README.txt
+/home/codespace $ cd dc_workshop/data/untrimmed_fastq
+/home/codespace/dc_workshop/data/untrimmed_fastq $ nano README.txt
 ~~~
 
 You should see something like this: 
@@ -143,7 +143,7 @@ grep -B1 -A2 NNNNNNNNNN *.fastq > scripted_bad_reads.txt
 We are going to create a new file to put this command in. We will call it `bad-reads-script.sh`. The `sh` is not required, but using that extension tells us it is a shell script.
 
 ~~~
-$ nano bad-reads-script.sh
+/home/codespace/dc_workshop/data/untrimmed_fastq $ nano bad-reads-script.sh
 ~~~
 
 Type your `grep` command into the file and save it as before. Be careful not to add the `$` at the beginning of the line.
@@ -151,7 +151,7 @@ Type your `grep` command into the file and save it as before. Be careful not to 
 Now comes the neat part. We can run this script. Type:
 
 ~~~
-$ bash bad-reads-script.sh
+/home/codespace/dc_workshop/data/untrimmed_fastq $ bash bad-reads-script.sh
 ~~~
 
 It will look like nothing happened, but now if you look at `scripted_bad_reads.txt`, you can see that there are now reads in the file.
@@ -173,7 +173,7 @@ We had to type `bash` because we needed to tell the computer what program to use
 First, let us look at the current permissions.
 
 ~~~
-$ ls -l bad-reads-script.sh
+/home/codespace/dc_workshop/data/untrimmed_fastq $ ls -l bad-reads-script.sh
 ~~~
 
 ~~~
@@ -183,13 +183,13 @@ $ ls -l bad-reads-script.sh
 We see that it says `-rw-r--r--`. This combination shows that the file can be read by any user and written to by the file owner (you). We want to change these permissions so the file can be executed as a program. We use the command `chmod` as we did earlier when we removed write permissions. Here we are adding (`+`) executable permissions (`+x`).
 
 ~~~
-$ chmod +x bad-reads-script.sh
+/home/codespace/dc_workshop/data/untrimmed_fastq $ chmod +x bad-reads-script.sh
 ~~~
 
 Now let us look at the permissions again.
 
 ~~~
-$ ls -l bad-reads-script.sh
+/home/codespace/dc_workshop/data/untrimmed_fastq $ ls -l bad-reads-script.sh
 ~~~
 
 ~~~
@@ -199,7 +199,7 @@ $ ls -l bad-reads-script.sh
 Now we see that it says `-rwxr-xr-x`. The `x`'s there now tell us we can run it as a program. So, let us try it! We will need to put `./` at the beginning, so the computer knows to look here in this directory for the program.
 
 ~~~
-$ ./bad-reads-script.sh
+/home/codespace/dc_workshop/data/untrimmed_fastq $ ./bad-reads-script.sh
 ~~~
 
 The script should run the same way as before, but now we have created our own computer program!
@@ -207,8 +207,8 @@ The script should run the same way as before, but now we have created our own co
 It is good practice to keep any large files compressed while not using them. In this way, you save storage space; you will see that you will appreciate it when you advance your analysis. So, since we will not use the FASTQ files for now, let us compress them. Moreover, run `ls -lh` to confirm that they are compressed.
 
 ~~~
-$ gzip /workspaces/codespace-metagenomics-shell/dc_workshop/data/untrimmed_fastq/*.fastq
-$ ls -lh /workspaces/codespace-metagenomics-shell/dc_workshop/data/untrimmed_fastq/*.fastq.gz
+/home/codespace/dc_workshop/data/untrimmed_fastq $ gzip *.fastq
+/home/codespace/dc_workshop/data/untrimmed_fastq $ ls -lh *.fastq.gz
 ~~~
 
 ~~~
@@ -245,10 +245,10 @@ tab-delimited file that tells us what data is available on the Ensembl bacteria 
 Before starting our download, we need to know whether we are using ``curl`` or ``wget``.
 
 To see which program you have, type:
- 
+
 ~~~
-$ which curl
-$ which wget
+/home/codespace/dc_workshop/data/untrimmed_fastq $ which curl
+/home/codespace/dc_workshop/data/untrimmed_fastq $ which wget
 ~~~
 
 ``which`` is a BASH program that looks through everything you have
@@ -259,7 +259,7 @@ results.
 On Mac OSX, you will likely get the following output:
 
 ~~~
-$ which curl
+/home/codespace/dc_workshop/data/untrimmed_fastq $ which curl
 ~~~
 
 ~~~
@@ -267,11 +267,11 @@ $ which curl
 ~~~
 
 ~~~
-$ which wget
+/home/codespace/dc_workshop/data/untrimmed_fastq $ which wget
 ~~~
 
 ~~~
-$
+/home/codespace/dc_workshop/data/untrimmed_fastq $
 ~~~
 
 This output means that you have ``curl`` installed but not ``wget``.
@@ -280,15 +280,15 @@ Once you know whether you have ``curl`` or ``wget`` use one of the
 following commands to download the file:
 
 ~~~
-$ cd
-$ wget ftp://ftp.ensemblgenomes.org/pub/release-37/bacteria/species_EnsemblBacteria.txt
+/home/codespace/dc_workshop/data/untrimmed_fastq $ cd
+/home/codespace $ wget ftp://ftp.ensemblgenomes.org/pub/release-37/bacteria/species_EnsemblBacteria.txt
 ~~~
 
 or
 
 ~~~
-$ cd
-$ curl -O ftp://ftp.ensemblgenomes.org/pub/release-37/bacteria/species_EnsemblBacteria.txt
+/home/codespace/dc_workshop/data/untrimmed_fastq $ cd
+/home/codespace $ curl -O ftp://ftp.ensemblgenomes.org/pub/release-37/bacteria/species_EnsemblBacteria.txt
 ~~~
 
 Since we wanted to *download* the file rather than view it, we used ``wget`` without

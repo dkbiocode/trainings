@@ -53,7 +53,7 @@ presented on the first three lines, with DNA sequences on the following lines.
 Let's look at the files:
 
 ```
-$ head -n 5 basilisk.dat minotaur.dat unicorn.dat
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/creatures $ head -n 5 basilisk.dat minotaur.dat unicorn.dat
 ```
 
 ### Syntax
@@ -74,7 +74,7 @@ done
 and we can apply this to our example like this:
 
 ```
-$ for filename in basilisk.dat minotaur.dat unicorn.dat
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/creatures $ for filename in basilisk.dat minotaur.dat unicorn.dat
 > do
 >     echo $filename
 >     head -n 2 $filename | tail -n 1
@@ -156,7 +156,7 @@ The shell itself doesn't care what the variable is called;
 if we wrote this loop as:
 
 ~~~
-$ for x in basilisk.dat minotaur.dat unicorn.dat
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/creatures $ for x in basilisk.dat minotaur.dat unicorn.dat
 > do
 >     head -n 2 $x | tail -n 1
 > done
@@ -165,7 +165,7 @@ $ for x in basilisk.dat minotaur.dat unicorn.dat
 or:
 
 ~~~
-$ for temperature in basilisk.dat minotaur.dat unicorn.dat
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/creatures $ for temperature in basilisk.dat minotaur.dat unicorn.dat
 > do
 >     head -n 2 $temperature | tail -n 1
 > done
@@ -372,7 +372,7 @@ Let's continue with our example in the `shell-lesson-data/exercise-data/creature
 Here's a slightly more complicated loop:
 
 ~~~
-$ for filename in *.dat
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/creatures $ for filename in *.dat
 > do
 >     echo $filename
 >     head -n 100 $filename | tail -n 20
@@ -386,7 +386,7 @@ The first command, `echo`, prints its command-line arguments to standard output.
 For example:
 
 ~~~
-$ echo hello there
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/creatures $ echo hello there
 ~~~
 
 prints:
@@ -401,7 +401,7 @@ since the shell expands `$filename` to be the name of a file,
 Note that we can't write this as:
 
 ~~~
-$ for filename in *.dat
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/creatures $ for filename in *.dat
 > do
 >     $filename
 >     head -n 100 $filename | tail -n 20
@@ -463,18 +463,18 @@ from whatever file is being processed
 > ...
 > ~~~
 
-We would like to modify each of the files in `shell-lesson-data/exercise-data/creatures`, 
+We would like to modify each of the files in `shell-lesson-data/exercise-data/creatures`,
 but also save a version of the original files. We want to copy the original files to new
 files named `original-basilisk.dat` and `original-unicorn.dat`, for example. We can't use:
 
 ~~~
-$ cp *.dat original-*.dat
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/creatures $ cp *.dat original-*.dat
 ~~~
 
 because that would expand to:
 
 ~~~
-$ cp basilisk.dat minotaur.dat unicorn.dat original-*.dat
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/creatures $ cp basilisk.dat minotaur.dat unicorn.dat original-*.dat
 ~~~
 
 This wouldn't back up our files, instead we get an error:
@@ -489,7 +489,7 @@ no directory named `original-*.dat` in the `creatures` directory, we get an erro
 
 Instead, we can use a loop:
 ~~~
-$ for filename in *.dat
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/exercise-data/creatures $ for filename in *.dat
 > do
 >     cp $filename original-$filename
 > done
@@ -549,11 +549,11 @@ Since she's still learning how to use the shell,
 she decides to build up the required commands in stages.
 Her first step is to make sure that she can select the right input files --- remember,
 these are ones whose names end in 'A' or 'B', rather than 'Z'.
-Starting from her home directory, Nelle types:
+Starting from the shell-lesson-data directory, Nelle types:
 
 ~~~
-$ cd north-pacific-gyre
-$ for datafile in NENE*A.txt NENE*B.txt
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data $ cd north-pacific-gyre
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/north-pacific-gyre $ for datafile in NENE*A.txt NENE*B.txt
 > do
 >     echo $datafile
 > done
@@ -574,7 +574,7 @@ Prefixing each input file's name with 'stats' seems simple,
 so she modifies her loop to do that:
 
 ~~~
-$ for datafile in NENE*A.txt NENE*B.txt
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/north-pacific-gyre $ for datafile in NENE*A.txt NENE*B.txt
 > do
 >     echo $datafile stats-$datafile
 > done
@@ -602,14 +602,14 @@ the shell redisplays the whole loop on one line
 (using semi-colons to separate the pieces):
 
 ~~~
-$ for datafile in NENE*A.txt NENE*B.txt; do echo $datafile stats-$datafile; done
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/north-pacific-gyre $ for datafile in NENE*A.txt NENE*B.txt; do echo $datafile stats-$datafile; done
 ~~~
 
 Using the <kbd>←</kbd>,
 Nelle navigates to the `echo` command and changes it to `bash goostats.sh`:
 
 ~~~
-$ for datafile in NENE*A.txt NENE*B.txt; do bash goostats.sh $datafile stats-$datafile; done
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/north-pacific-gyre $ for datafile in NENE*A.txt NENE*B.txt; do bash goostats.sh $datafile stats-$datafile; done
 ~~~
 
 When she presses <kbd>Enter</kbd>,
@@ -622,7 +622,7 @@ uses <kbd>↑</kbd> to repeat the command,
 and edits it to read:
 
 ~~~
-$ for datafile in NENE*A.txt NENE*B.txt; do echo $datafile;
+/workspaces/trainings/workshops/shell-novice/shell-lesson-data/north-pacific-gyre $ for datafile in NENE*A.txt NENE*B.txt; do echo $datafile;
 bash goostats.sh $datafile stats-$datafile; done
 ~~~
 

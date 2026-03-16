@@ -48,10 +48,10 @@ The process of (metagenomics) assembly can take a long time, and if the connecti
 
 ### Starting a new session
 
-A ‘session’ can be considered a new window or screen: you might open a terminal to do one thing on the computer and then open a new terminal to work on another task at the command line. You can start a session and give it a descriptive name:
+A 'session' can be considered a new window or screen: you might open a terminal to do one thing on the computer and then open a new terminal to work on another task at the command line. You can start a session and give it a descriptive name:
 
 ~~~
-$ screen -S assembly
+/workspaces/trainings/dc_workshop/data/trimmed_fastq $ screen -S assembly
 ~~~
 
 
@@ -65,35 +65,35 @@ You can detach from a session by pressing `control + a` followed by `d` (for det
 
 > ## Additional session commands
 > **Seeing active sessions**
-> If you disconnect from your session or from your ssh, you will need to reconnect to an existing 
+> If you disconnect from your session or from your ssh, you will need to reconnect to an existing
 > `screen` session. You can see a list of existing sessions:
 > ~~~
-> $ screen -ls
+> /workspaces/trainings/dc_workshop/data/trimmed_fastq $ screen -ls
 > ~~~
-> 
+>
 > **Reconnecting to a session**
 > To reconnect to an existing session:
-> 
+>
 > ~~~
-> $ screen -r session_name
+> /workspaces/trainings/dc_workshop/data/trimmed_fastq $ screen -r session_name
 > ~~~
-> 
-> 
+>
+>
 > The `-r` option = 'resume  a detached screen session'
 >
 > **Kill a session**
 > To end a session, type `exit` after reconnecting to the session:
-> 
+>
 > ~~~
-> $ screen -r session_name
-> $ exit
+> /workspaces/trainings/dc_workshop/data/trimmed_fastq $ screen -r session_name
+> /workspaces/trainings/dc_workshop/data/trimmed_fastq $ exit
 > ~~~
 > 
 
 
 Let's see if our program is installed correctly:
 ~~~
-$ metaspades.py
+/workspaces/trainings/dc_workshop/data/trimmed_fastq $ metaspades.py
 ~~~
 
 
@@ -134,9 +134,8 @@ directory where we want our results to be stored.
 
 <p style="text-align: right;"><a href=".whereami/PROJ_ROOT.workshops.metagenomics.dc_workshop.data.trimmed_fastq" target="_new">🧭</a></p>
 
- ~~~
-$ cd ../../dc_workshop/data/trimmed_fastq
-$ metaspades.py -1 JC1A_R1.trim.fastq.gz -2 JC1A_R2.trim.fastq.gz -o ../../results/assembly_JC1A
+~~~
+/workspaces/trainings/dc_workshop/data/trimmed_fastq $ metaspades.py -1 JC1A_R1.trim.fastq.gz -2 JC1A_R2.trim.fastq.gz -o ../../results/assembly_JC1A
 ~~~
 
 
@@ -159,8 +158,8 @@ Now we can kill the screen with `exit` and look at our results in the main scree
 Now, let's go to the output files: <sup><a href=".whereami/PROJ_ROOT.workshops.metagenomics.dc_workshop.results.assembly_JC1A" target="_new">🧭</a></sup>
 
 ~~~
-$ cd ../../results/assembly_JC1A
-$ ls -F
+/workspaces/trainings/dc_workshop/data/trimmed_fastq $ cd ../../results/assembly_JC1A
+/workspaces/trainings/dc_workshop/results/assembly_JC1A $ ls -F
 ~~~
 
 

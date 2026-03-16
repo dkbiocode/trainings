@@ -51,8 +51,8 @@ We'll search for strings inside of our fastq files. Let's first make sure we are
 directory.
 
 ~~~
-$ cd /workspaces/codespace-metagenomics-shell/dc_workshop/data/untrimmed_fastq
-$ ls
+/home/codespace $ cd dc_workshop/data/untrimmed_fastq
+/home/codespace/dc_workshop/data/untrimmed_fastq $ ls
 ~~~
 ~~~
 JC1A_R1.fastq   JC1A_R2.fastq     JP4D_R1.fastq     JP4D_R2.fastq  TruSeq3-PE.fa
@@ -71,7 +71,7 @@ Suppose we want to see how many reads in our file have really bad segments conta
 
 Let's search for the string NNNNNNNNNN in the JC1A_R2.fastq file.
 ~~~
-$ grep NNNNNNNNNN JC1A_R2.fastq
+/home/codespace/dc_workshop/data/untrimmed_fastq $ grep NNNNNNNNNN JC1A_R2.fastq
 ~~~
 
 This command returns a lot of output to the terminal. Every single line in the JC1A_R2.fastq 
@@ -84,11 +84,11 @@ each of these reads. To get all of this information, we will return the line
 immediately before each match and the two lines immediately after each match.
 
 We can use the `-B` argument for grep to return a specific number of lines before
-each match. The `-A` argument returns a specific number of lines after each matching line. Here we want the line *before* and the two lines *after* each 
+each match. The `-A` argument returns a specific number of lines after each matching line. Here we want the line *before* and the two lines *after* each
 matching line, so we add `-B1 -A2` to our grep command.
 
 ~~~
-$ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq
+/home/codespace/dc_workshop/data/untrimmed_fastq $ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq
 ~~~
 
 One of the sets of lines returned by this command is: 
@@ -128,12 +128,12 @@ use other commands to analyze this data.
 
 The command for redirecting output to a file is `>`.
 
-Let's try out this command and copy all the records (including all four lines of each record) 
-in our FASTQ files that contain 
+Let's try out this command and copy all the records (including all four lines of each record)
+in our FASTQ files that contain
 'NNNNNNNNNN' to another file called `bad_reads.txt`.
 
 ~~~
-$ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq > bad_reads.txt
+/home/codespace/dc_workshop/data/untrimmed_fastq $ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq > bad_reads.txt
 ~~~
 
   
@@ -141,12 +141,12 @@ $ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq > bad_reads.txt
 The prompt should sit there a little bit, and then it should look like nothing
 happened. But type `ls`. You should see a new file called `bad_reads.txt`. 
 
-We can check the number of lines in our new file using a command called `wc`. 
+We can check the number of lines in our new file using a command called `wc`.
 `wc` stands for **word count**. This command counts the number of words, lines, and characters
-in a file. 
+in a file.
 
 ~~~
-$ wc bad_reads.txt
+/home/codespace/dc_workshop/data/untrimmed_fastq $ wc bad_reads.txt
 ~~~
 
 ~~~
@@ -157,7 +157,7 @@ This will tell us the number of lines, words and characters in the file. If we
 want only the number of lines, we can use the `-l` flag for `lines`.
 
 ~~~
-$ wc -l bad_reads.txt
+/home/codespace/dc_workshop/data/untrimmed_fastq $ wc -l bad_reads.txt
 ~~~
 
 ~~~
@@ -178,13 +178,13 @@ four to get the number of sequences that match our search pattern.
 
 We might want to search multiple FASTQ files for sequences that match our search pattern.
 However, we need to be careful, because each time we use the `>` command to redirect output
-to a file, the new output will replace the output that was already present in the file. 
+to a file, the new output will replace the output that was already present in the file.
 This is called "overwriting" and, just like you don't want to overwrite your video recording
 of your kid's first birthday party, you also want to avoid overwriting your data files.
 
 ~~~
-$ grep -B1 -A2 NNNNNNNNNN JC1A_R1.fastq > bad_reads.txt
-$ wc -l bad_reads.txt
+/home/codespace/dc_workshop/data/untrimmed_fastq $ grep -B1 -A2 NNNNNNNNNN JC1A_R1.fastq > bad_reads.txt
+/home/codespace/dc_workshop/data/untrimmed_fastq $ wc -l bad_reads.txt
 ~~~
 
 ~~~
@@ -194,12 +194,12 @@ $ wc -l bad_reads.txt
 
 The old `bad_reads.txt` that counts bad quality reads from file `JC1A_R2.fastq` with 402 lines has been erased.
 Instead a new `bad_reads.txt` that contain 24 lines from bad reads from `JC1A_R1.fastq` has been created.
-We can avoid overwriting our files by using the command `>>`. `>>` is known as the "append redirect" and will 
+We can avoid overwriting our files by using the command `>>`. `>>` is known as the "append redirect" and will
 append new output to the end of a file, rather than overwriting it.
 
 ~~~
-$ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq > bad_reads.txt
-$ wc -l bad_reads.txt
+/home/codespace/dc_workshop/data/untrimmed_fastq $ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq > bad_reads.txt
+/home/codespace/dc_workshop/data/untrimmed_fastq $ wc -l bad_reads.txt
 ~~~
 
 ~~~
@@ -207,25 +207,25 @@ $ wc -l bad_reads.txt
 ~~~
 
 ~~~
-$ grep -B1 -A2 NNNNNNNNNN JC1A_R1.fastq >> bad_reads.txt
-$ wc -l bad_reads.txt
+/home/codespace/dc_workshop/data/untrimmed_fastq $ grep -B1 -A2 NNNNNNNNNN JC1A_R1.fastq >> bad_reads.txt
+/home/codespace/dc_workshop/data/untrimmed_fastq $ wc -l bad_reads.txt
 ~~~
 
 ~~~
 426 bad_reads.txt
 ~~~
 
-The output of our second call to `wc` shows that we have not overwritten our original data. 
+The output of our second call to `wc` shows that we have not overwritten our original data.
 The final number of 426 lines results from the adition of 402 reads from `JC1A_R2.fastq`
- file + 24 reads from  `JC1A_R1.fastq` file. We can also do this for more files with a single line of code by using a wildcard. 
+ file + 24 reads from  `JC1A_R1.fastq` file. We can also do this for more files with a single line of code by using a wildcard.
 
 ~~~
-$ rm bad_reads.txt
+/home/codespace/dc_workshop/data/untrimmed_fastq $ rm bad_reads.txt
 ~~~
 
 ~~~
-$ grep -B1 -A2 NNNNNNNNNN *.fastq >> bad_reads.txt
-$ wc -l bad_reads.txt
+/home/codespace/dc_workshop/data/untrimmed_fastq $ grep -B1 -A2 NNNNNNNNNN *.fastq >> bad_reads.txt
+/home/codespace/dc_workshop/data/untrimmed_fastq $ wc -l bad_reads.txt
 ~~~
 
 ~~~
@@ -250,7 +250,7 @@ look at it, like we can with `less`. Well it turns out that we can! We can redir
 from our `grep` call through the `less` command.
 
 ~~~
-$ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq | less
+/home/codespace/dc_workshop/data/untrimmed_fastq $ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq | less
 ~~~
 
 We can now see the output from our `grep` call within the `less` interface. We can use the up and down arrows 
@@ -272,20 +272,20 @@ Similar to wildcards and tab completion, using loops also reduces the amount of 
 Loops are helpful when performing operations on groups of sequencing files, such as unzipping or trimming multiple
 files. We will use loops for these purposes in subsequent analyses, but will cover the basics of them for now.
 
-When the shell sees the keyword `for`, it knows to repeat a command (or group of commands) once for each item in a list. 
-Each time the loop runs (called an iteration), an item in the list is assigned in sequence to the **variable**, and 
-the commands inside the loop are executed, before moving on to  the next item in the list. Inside the loop, we call for 
+When the shell sees the keyword `for`, it knows to repeat a command (or group of commands) once for each item in a list.
+Each time the loop runs (called an iteration), an item in the list is assigned in sequence to the **variable**, and
+the commands inside the loop are executed, before moving on to  the next item in the list. Inside the loop, we call for
 the variable's value by putting `$` in front of it. The `$` tells the shell interpreter to treat the **variable**
 as a variable name and substitute its value in its place, rather than treat it as text or an external command. In shell programming, this is usually called "expanding" the variable.
 
 ~~~
-$ cd ../untrimmed_fastq/
+/home/codespace/dc_workshop/data/untrimmed_fastq $ cd ../untrimmed_fastq/
 ~~~
 
-Let's write a for loop to show us the first two lines of the fastq files we downloaded earlier. You will notice shell prompt changes from `$` to `>` and back again as we were typing in our loop. The second prompt, `>`, is different to remind us that we haven’t finished typing a complete command yet. A semicolon, `;`, can be used to separate two commands written on a single line.
+Let's write a for loop to show us the first two lines of the fastq files we downloaded earlier. You will notice shell prompt changes from the full path to `>` and back again as we were typing in our loop. The second prompt, `>`, is different to remind us that we haven't finished typing a complete command yet. A semicolon, `;`, can be used to separate two commands written on a single line.
 
 ~~~
-$ for filename in *.fastq
+/home/codespace/dc_workshop/data/untrimmed_fastq $ for filename in *.fastq
 > do
 > head -n 2 ${filename} >> seq_info.txt
 > done
@@ -293,7 +293,7 @@ $ for filename in *.fastq
 
 To see the content of the little file we just made it is useful to use the `cat` command.
 ~~~
-cat seq_info.txt
+/home/codespace/dc_workshop/data/untrimmed_fastq $ cat seq_info.txt
 ~~~
 ~~~
 @MISEQ-LAB244-W7:91:000000000-A5C7L:1:1101:13417:1998 1:N:0:TCGNAG
@@ -316,10 +316,10 @@ Note that we are using `>>` to append the text to our `seq_info.txt` file. If we
 every time the loop iterates, so it would only have text from the last variable used. Instead, `>>` adds to the end of the file.
 
 ## Using Basename in for loops
-Basename is a function in UNIX that is helpful for removing a uniform part of a name from a list of files. In this case, we will use basename to remove the `.fastq` extension from the files that we’ve been working with. 
+Basename is a function in UNIX that is helpful for removing a uniform part of a name from a list of files. In this case, we will use basename to remove the `.fastq` extension from the files that we've been working with.
 
 ~~~
-$ basename JC1A_R2.fastq .fastq
+/home/codespace/dc_workshop/data/untrimmed_fastq $ basename JC1A_R2.fastq .fastq
 ~~~
 
 We see that this returns just the SRR accession, and no longer has the .fastq file extension on it.
@@ -331,7 +331,7 @@ JC1A_R2
 If we try the same thing but use `.fasta` as the file extension instead, nothing happens. This is because basename only works when it exactly matches a string in the file.
 
 ~~~
-$ basename JC1A_R2.fastq .fasta
+/home/codespace/dc_workshop/data/untrimmed_fastq $ basename JC1A_R2.fastq .fasta
 ~~~
 
 ~~~
@@ -340,10 +340,10 @@ JC1A_R2.fastq
 
 Basename is really powerful when used in a for loop. It allows to access just the file prefix, which you can use to name things. Let's try this.
 
-Inside our for loop, we create a new name variable. We call the basename function inside the parenthesis, then give our variable name from the for loop, in this case `${filename}`, and finally state that `.fastq` should be removed from the file name. It’s important to note that we’re not changing the actual files, we’re creating a new variable called name. The line > echo $name will print to the terminal the variable name each time the for loop runs. Because we are iterating over two files, we expect to see two lines of output.
+Inside our for loop, we create a new name variable. We call the basename function inside the parenthesis, then give our variable name from the for loop, in this case `${filename}`, and finally state that `.fastq` should be removed from the file name. It's important to note that we're not changing the actual files, we're creating a new variable called name. The line > echo $name will print to the terminal the variable name each time the for loop runs. Because we are iterating over two files, we expect to see two lines of output.
 
 ~~~
-$ for filename in *.fastq
+/home/codespace/dc_workshop/data/untrimmed_fastq $ for filename in *.fastq
 > do
 > name=$(basename ${filename} .fastq)
 > echo ${name}
@@ -366,10 +366,10 @@ JP4D_R2
 >
 > **[View Exercise with Solution](.exercises/04-redirection/exercise-3.md)**
 
-One way this is really useful is to move files. Let's rename all of our .txt files using `mv` so that they have the years on them, which will document when we created them. 
+One way this is really useful is to move files. Let's rename all of our .txt files using `mv` so that they have the years on them, which will document when we created them.
 
 ~~~
-$ for filename in *.txt
+/home/codespace/dc_workshop/data/untrimmed_fastq $ for filename in *.txt
 > do
 > name=$(basename ${filename} .txt)
 > mv ${filename}  ${name}_2019.txt

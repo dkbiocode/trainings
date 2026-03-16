@@ -3,3 +3,7 @@ SESSION_CONTEXT.md
 temporary-working-folder/
 dc_workshop.zip
 dc_workshop/
+backup_dc_workshop/
+
+*.fastq.gz
+

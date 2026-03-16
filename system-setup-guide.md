@@ -1,66 +1,98 @@
-# System Setup Guide and Workbook
+# System Setup Guide
 
-This guide helps you understand your computing environment and record important details for reference during the lessons.
+This guide helps you understand your computing environment and provides reference information for different computing platforms.
 
-<mark>!!! Document in process !!!</mark>
+## System Information Quick Reference
 
-**Fill in your system information:**
+Use this table to find the correct values for your computing environment:
 
-* My username is: _____________
-* My home directory is: _____________
-* My project root is: _____________
-* My available parallel threads: _____________
+| Environment | Username | Home Directory | Project Root | Compute Threads |
+|------------|----------|----------------|--------------|-----------------|
+| **GitHub Codespaces** | `codespace` | `/home/codespace` | `/workspaces/trainings` | 2 (use `nproc` to verify) |
+| **AWS EC2** (this guide's setup) | `ubuntu` | `/home/ubuntu` | `/home/ubuntu/trainings` | 8 for t3a.2xlarge (use `nproc` to verify) |
+| **HPC Server** (varies) | Your institution ID | `/home/YOUR_ID` | `/projects/YOUR_ID/trainings` (may vary) | Check job script or use 2 as default |
+
+**Note for HPC users:** Consult your system administrator for your specific project space location and available resources.
 
 ---
 
-### Your Home Directory
+## Understanding Your Environment
+
+### Home Directory
 
 When you log into a Linux system, you start in your **home directory**. This is your personal space, typically located at `/home/YOUR_USERNAME`.
 
-**On GitHub Codespaces:**
-- Your username is: `codespace`
-- Your home directory is: `/home/codespace`
+**Key Points:**
 - Your terminal starts here by default
+- Configuration files are stored here (`.bashrc`, `.ssh/config`, etc.)
+- Most computational work happens in your **project root**, not your home directory
 
-**Note:** While this is where you start, most of your computational work will happen in your *project root* (explained below), not your home directory.
+**Find your home directory:**
+```bash
+echo $HOME
+# Or
+cd ~
+pwd
+```
 
 ---
 
-### Your Project Root
+### Project Root
 
 The **project root** is where the workshop files are stored. This is your working directory for all lessons and exercises.
 
-#### On GitHub Codespaces
+#### GitHub Codespaces
 
 The repository is automatically cloned to: `/workspaces/trainings`
 
-**Important:**
-- VS Code's file browser shows: `/workspaces/trainings`
-- Your terminal starts at: `/home/codespace`
-- To navigate to the workshop files: `cd /workspaces/trainings`
+**Navigation:**
+```bash
+# From anywhere, navigate to project root:
+cd /workspaces/trainings
 
-**Project root:** `/workspaces/trainings`
+# Check where you are:
+pwd
+```
 
-#### On an HPC Server
+#### AWS EC2 (Following This Guide's Setup)
+
+After cloning, the repository is at: `/home/ubuntu/trainings`
+
+**Navigation:**
+```bash
+# From anywhere, navigate to project root:
+cd ~/trainings
+
+# Check where you are:
+pwd
+```
+
+#### HPC Server
 
 On institutional high-performance computing (HPC) servers, you'll have a designated workspace for code and computation.
 
-**Example:** On the Alpine server, a project root might be:
-```
-/projects/dcking@colostate.edu/trainings
-```
+**Common patterns:**
+- `/projects/YOUR_USERNAME/trainings`
+- `/scratch/YOUR_USERNAME/trainings`
+- `/work/YOUR_USERNAME/trainings`
 
-To set up:
-1. Navigate to your project space: `cd /your-project-space`
-2. Clone the repository: `git clone [repository-url]`
+**Setup:**
+```bash
+# Navigate to your project space (example):
+cd /projects/YOUR_USERNAME
 
-**Project root:** `/your-project-space/trainings`
+# Clone the repository:
+git clone https://github.com/dkbiocode/trainings.git
+
+# Navigate to project root:
+cd trainings
+```
 
 ⚠️ **Consult your system administrator** for your specific project space location.
 
 ---
 
-### How Many Parallel Threads Do I Have?
+## How Many Parallel Threads Do I Have?
 
 **Threads** (also called "cores", "virtual CPUs", or "processors") determine how many tasks your system can run simultaneously. Many bioinformatics programs can use multiple threads to run faster.
 

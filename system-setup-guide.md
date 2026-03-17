@@ -4,13 +4,14 @@ This guide helps you understand your computing environment and provides referenc
 
 ## System Information Quick Reference
 
-Use this table to find the correct values for your computing environment:
+Use this table to find the correct values for your computing environment. Note, the values for GitHub Codespaces and AWS are the ones chosen for these trainings:
 
-| Environment | Username | Home Directory | Project Root | Compute Threads |
-|------------|----------|----------------|--------------|-----------------|
-| **GitHub Codespaces** | `codespace` | `/home/codespace` | `/workspaces/trainings` | 2 (use `nproc` to verify) |
-| **AWS EC2** (this guide's setup) | `ubuntu` | `/home/ubuntu` | `/home/ubuntu/trainings` | 8 for t3a.2xlarge (use `nproc` to verify) |
-| **HPC Server** (varies) | Your institution ID | `/home/YOUR_ID` | `/projects/YOUR_ID/trainings` (may vary) | Check job script or use 2 as default |
+| Environment | Username | Home Directory | Project Root | Compute Threads | Note |
+|------------|----------|----------------|--------------|-----------------| ----- |
+| **GitHub Codespaces** | `codespace` | `/home/codespace` | `/workspaces/trainings` | 2 (use `nproc` to verify) | Can set to 4 in "change machine type" |
+| **AWS EC2** | `ubuntu` | `/home/ubuntu` | `/home/ubuntu/trainings` | 8 for t3a.2xlarge (use `nproc` to verify) | Higher tiers available <a href="guides/img/instance-comparison-with-prices.png" target="_new">(see compute costs)</a>|
+| **HPC Server** (varies) | Commonly your institution ID | `/home/YOUR_ID` | `/projects/YOUR_ID/trainings` (may vary) | Check job script or use 2 as default | Can allocate per job |
+
 
 **Note for HPC users:** Consult your system administrator for your specific project space location and available resources.
 

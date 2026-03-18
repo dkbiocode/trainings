@@ -1,0 +1,127 @@
+# Site Settings
+title: "Bioinformatics Training Workshops"
+subtitle: "Linux and NGS Workflows"
+name: "dkbiocode"
+description: "Interactive workshops for learning bioinformatics, Linux command line, and metagenomics analysis using GitHub Codespaces, AWS, or HPC environments."
+url: "https://dkbiocode.github.io"
+baseurl: "/trainings"
+repository: "dkbiocode/trainings"
+
+# Theme Configuration
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin: "default" # Options: "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+# Site Author
+author:
+  name: "dkbiocode"
+  bio: "Bioinformatics training materials"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/dkbiocode/trainings"
+
+# Reading Files
+include:
+  - _pages
+  - workshops
+  - guides
+
+exclude:
+  - .devcontainer/
+  - .github/
+  - .git/
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - "*.gem"
+  - "*.gemspec"
+  - SESSION_CONTEXT.md
+  - broken-links-report.md
+  - execution_report_*.html
+  - scripts/
+  # Workshop data directories
+  - workshops/**/dc_workshop/
+  - workshops/**/shell-lesson-data/
+  - workshops/**/data/
+  # Large binary files
+  - "**/*.fastq.gz"
+  - "**/*.fastq"
+  - "**/*.fasta.gz"
+  - "**/*.fasta"
+  - "**/*.biom"
+  - "**/*.sam"
+  - "**/*.bam"
+  - "**/*.tar.gz"
+  - "**/*.zip"
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-include-cache
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: false
+      read_time: true
+      comments: false
+      share: false
+      related: false
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: false
+  # workshops
+  - scope:
+      path: "workshops"
+    values:
+      layout: single
+      author_profile: false
+      toc: true
+      toc_sticky: true
+
+# Archives
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
+# Navigation (optional - can customize later)
+# Uncomment and modify to add top navigation
+# main:
+#   - title: "Workshops"
+#     url: /workshops/
+#   - title: "Guides"
+#     url: /guides/
+#   - title: "About"
+#     url: /about/

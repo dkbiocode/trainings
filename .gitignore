@@ -9,3 +9,14 @@ backup_dc_workshop/
 
 *.fastq.gz
 
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+Gemfile.lock
+
+# Ruby
+vendor/
+.bundle/
+

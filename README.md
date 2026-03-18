@@ -1,3 +1,5 @@
+Click here to start: [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/NAHLN/trainings?quickstart=1)
+
 # Codespace Workshops for Linux and NGS Bioinformatics Workflows
 
 These trainings and associated lessons are adapted from the popular [datacarpentry project](https://datacarpentry.org) to be easily executed in Github Codespaces.  However, 

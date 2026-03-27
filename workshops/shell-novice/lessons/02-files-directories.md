@@ -762,7 +762,7 @@ directories "backup" and "thing"; "/Users/backup" contains "original",
 directories "backup" and "thing"; "/Users/backup" contains "original",
 "pnas_final" and "pnas_sub"; "/Users/thing" contains "backup"; and
 "/Users/thing/backup" contains "2012-12-01", "2013-01-08" and
-"2013-01-27"](../fig/filesystem-challenge.svg)
+"2013-01-27"](img/filesystem-challenge.svg)
 >
 > 1.  `ls pwd`
 > 2.  `ls -r -F`

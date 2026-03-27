@@ -1,103 +1,66 @@
 ---
 layout: splash
-title: "Bioinformatics Training Workshops"
+permalink: /
+hidden: true
 header:
   overlay_color: "#000"
   overlay_filter: "0.5"
-  overlay_image: /assets/images/dna-banner.jpg
-excerpt: "Interactive workshops for learning Linux command line, bioinformatics tools, and metagenomics analysis"
+title: "Bioinformatics Training Workshops"
+tagline: "Interactive workshops for Linux, bioinformatics, and metagenomics"
+classes: wide
+
+feature_row1:
+  - image_path: /assets/images/quick-start-icon.png
+    alt: "Quick Start"
+    excerpt: "Launch a fully-configured bioinformatics environment in under 2 minutes. No installation required - start learning immediately with GitHub Codespaces."
+    url: "/quick-start/"
+    btn_class: "btn--inverse"
+    btn_label: "Get Started"
+
+feature_row2:
+  - image_path: /assets/images/shell-icon.png
+    alt: "Shell for Beginners"
+    excerpt: "Master the Linux command line with hands-on workshops. Perfect for complete beginners - learn to navigate, automate, and work efficiently."
+    url: "/shell-beginner/"
+    btn_class: "btn--inverse"
+    btn_label: "Learn Shell"
+
+feature_row3:
+  - image_path: /assets/images/metagenomics-icon.png
+    alt: "Metagenomics Lessons"
+    excerpt: "Complete workflow from raw reads to taxonomic profiles. Quality control, assembly, and classification with industry-standard tools."
+    url: "/metagenomics/"
+    btn_class: "btn--inverse"
+    btn_label: "Start Analysis"
+
+feature_row4:
+  - image_path: /assets/images/platforms-icon.png
+    alt: "Computing Platforms"
+    excerpt: "Run on GitHub Codespaces, AWS EC2, institutional HPC, or locally. Choose the platform that fits your needs and budget."
+    url: "/platforms/"
+    btn_class: "btn--inverse"
+    btn_label: "Choose Platform"
 ---
 
 ## Get Started Now
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/dkbiocode/trainings?quickstart=1){: .btn .btn--success .btn--large}
 
-**Start learning in under 2 minutes!** Click the button above to launch a fully-configured bioinformatics environment with all tools pre-installed.
+**Start learning in under 2 minutes!** Click above to launch a fully-configured environment.
+
+---
+
+{% include feature_row id="feature_row1" type="left" %}
+
+{% include feature_row id="feature_row2" type="right" %}
+
+{% include feature_row id="feature_row3" type="left" %}
+
+{% include feature_row id="feature_row4" type="right" %}
 
 ---
 
 ## About These Workshops
-
-These training materials are adapted from the [Data Carpentry](https://datacarpentry.org) project and designed for hands-on learning in:
-
-- **Linux command line** and shell scripting
-- **Bioinformatics workflows** for NGS data analysis
-- **Metagenomics analysis** and pathogen detection
-- **Best practices** for data organization and reproducibility
-
-**Multiple compute options available:**
-- **GitHub Codespaces** (recommended for beginners - free tier available)
-- **AWS EC2** cloud servers
-- **Institutional HPC** systems
-
----
-
-## Workshop Series
-
-### 🐚 Shell Novice
-**Start here if you're new to the command line**
-
-Learn essential Linux commands, file navigation, and basic scripting.
-
-[**Start Shell Workshop →**](workshops/shell-novice/lessons/README.html){: .btn .btn--primary}
-
-**Duration:** 2-4 hours
-**Prerequisites:** None
-
----
-
-### 🧬 Metagenomics Series
-
-A comprehensive series covering the full bioinformatics workflow:
-
-#### 1. Data Organization
-Learn best practices for structuring bioinformatics projects.
-
-[**Start Data Organization →**](workshops/metagenomics/metagenomics-organization/lessons/01-tidiness.html){: .btn .btn--primary}
-
-**Duration:** 1-2 hours
-**Prerequisites:** Basic command line knowledge
-
-#### 2. Shell for Metagenomics
-Apply shell skills to real bioinformatics workflows.
-
-[**Start Shell Workshop →**](workshops/metagenomics/metagenomics-shell/lessons/01-introduction.html){: .btn .btn--primary}
-
-**Duration:** 3-4 hours
-**Prerequisites:** Shell novice or equivalent
-
-#### 3. Metagenomics Analysis
-Hands-on analysis with quality control, assembly, and taxonomic classification.
-
-[**Start Analysis Workshop →**](workshops/metagenomics/metagenomics-analysis/lessons/01-background-metadata.html){: .btn .btn--primary}
-
-**Duration:** 8-12 hours
-**Prerequisites:** Shell for metagenomics or equivalent
-
-**Tools covered:** FastQC, Trimmomatic, SPAdes, Kraken
-
----
-
-## Setup Guides
-
-### System Setup Guide
-Orient yourself to your compute environment (Codespaces, AWS, or HPC).
-
-[**View Setup Guide →**](system-setup-guide.html){: .btn .btn--info}
-
-### AWS EC2 Setup
-Detailed instructions for setting up your own AWS cloud server.
-
-[**AWS Setup Guide →**](guides/aws-ec2-setup.html){: .btn .btn--info}
-
-### AWS Remote Connection
-Connect VS Code to your AWS instance for remote development.
-
-[**Connection Guide →**](guides/aws-remote-connection.html){: .btn .btn--info}
-
----
-
-## About GitHub Codespaces
 
 **GitHub Codespaces offers a free tier** with 120 core-hours per month (enough for 1-2 workshops).
 

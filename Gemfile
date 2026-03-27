@@ -1,18 +1,11 @@
 source "https://rubygems.org"
 
-# Jekyll
-gem "jekyll", "~> 4.3.0"
+# Use github-pages gem to match GitHub Pages environment
+# This ensures local builds match production
+gem "github-pages", group: :jekyll_plugins
 
-# Minimal Mistakes theme (using remote_theme in _config.yml)
-# No need for the gem since we're using remote_theme
-# gem "minimal-mistakes-jekyll"
-
-# Jekyll plugins
+# Additional plugins not included in github-pages
 group :jekyll_plugins do
-  gem "jekyll-feed"
-  gem "jekyll-seo-tag"
-  gem "jekyll-sitemap"
-  gem "jekyll-paginate"
   gem "jekyll-include-cache"
 end
 

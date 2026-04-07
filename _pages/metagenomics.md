@@ -6,7 +6,8 @@ author_profile: false
 toc: true
 toc_sticky: true
 header:
-  overlay_color: "#11999e"
+  overlay_color: "#1D4387"
+
 ---
 
 ## Comprehensive Metagenomics Training

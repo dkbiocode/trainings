@@ -3,8 +3,7 @@ layout: splash
 permalink: /
 hidden: true
 header:
-  overlay_color: "#000"
-  overlay_filter: "0.5"
+  overlay_color: "#1D4387"
 title: "Bioinformatics Training Workshops"
 tagline: "Interactive workshops for Linux, bioinformatics, and metagenomics"
 classes: wide
@@ -12,30 +11,30 @@ classes: wide
 feature_row1:
   - image_path: /assets/images/quick-start-icon.png
     alt: "Quick Start"
+    title: "Quick Start"
     excerpt: "Launch a fully-configured bioinformatics environment in under 2 minutes. No installation required - start learning immediately with GitHub Codespaces."
     url: "/quick-start/"
     btn_class: "btn--inverse"
     btn_label: "Get Started"
-
-feature_row2:
   - image_path: /assets/images/shell-icon.png
     alt: "Shell for Beginners"
+    title: "Shell for Beginners"
     excerpt: "Master the Linux command line with hands-on workshops. Perfect for complete beginners - learn to navigate, automate, and work efficiently."
     url: "/shell-beginner/"
     btn_class: "btn--inverse"
     btn_label: "Learn Shell"
-
-feature_row3:
-  - image_path: /assets/images/metagenomics-icon.png
+  - image_path: /assets/images/shell-icon.png
     alt: "Metagenomics Lessons"
+    title: "Metagenomics Lessons"
     excerpt: "Complete workflow from raw reads to taxonomic profiles. Quality control, assembly, and classification with industry-standard tools."
     url: "/metagenomics/"
     btn_class: "btn--inverse"
     btn_label: "Start Analysis"
 
-feature_row4:
+feature_row2:
   - image_path: /assets/images/platforms-icon.png
     alt: "Computing Platforms"
+    title: "Computing Platforms"
     excerpt: "Run on GitHub Codespaces, AWS EC2, institutional HPC, or locally. Choose the platform that fits your needs and budget."
     url: "/platforms/"
     btn_class: "btn--inverse"
@@ -50,13 +49,9 @@ feature_row4:
 
 ---
 
-{% include feature_row id="feature_row1" type="left" %}
+{% include feature_row id="feature_row1" %}
 
-{% include feature_row id="feature_row2" type="right" %}
-
-{% include feature_row id="feature_row3" type="left" %}
-
-{% include feature_row id="feature_row4" type="right" %}
+{% include feature_row id="feature_row2" %}
 
 ---
 

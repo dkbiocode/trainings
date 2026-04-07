@@ -1,12 +1,12 @@
 ---
-layout: single
+layout: splash
 permalink: /quick-start/
 title: "Quick Start"
 author_profile: false
 toc: true
 toc_sticky: true
 header:
-  overlay_color: "#11999e"
+  overlay_color: "#1D4387"
 ---
 
 ## Launch Learning Environment

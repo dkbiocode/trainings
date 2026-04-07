@@ -4,6 +4,7 @@ temporary-working-folder/
 dc_workshop.zip
 dc_workshop/
 backup_dc_workshop/
+build_logs/
 
 .DS_Store
 *.swp

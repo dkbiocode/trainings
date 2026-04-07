@@ -4,64 +4,117 @@
 
 @charset "utf-8";
 
+// Color Palette Variables
+$color-primary-blue: #1D4387;
+$color-beaker: #E0653B;
+$color-rod: #4AA59D;
+$color-virus: #99C555;
+$color-chromosome: #F0B153;
+$color-bug: #AF3034;
+$color-background-grey: #DFDFDF;
+
 // Custom variable overrides before importing theme
 // Footer background color override for mint skin
-$footer-background-color: #1D4387 !default; 
+$footer-background-color: $color-primary-blue !default;
+
+// Increase max width for content area (default is 1280px)
+$max-width: 1600px !default;
+// You can also try wider values like 1600px or even 100% for full width 
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
+// Page background colors
+// Masthead (top navigation) - white background full-width
+.masthead {
+  background-color: #fff;
+}
+
+.greedy-nav {
+  background-color: #fff;
+}
+
+.page__hero--overlay {
+  background-color: #fff; // White behind the overlay
+}
+
+// Apply grey background to body and content areas
+body {
+  background-color: $color-background-grey;
+}
+
+// Main content wrapper - grey background
+.layout--single,
+.page {
+  background-color: $color-background-grey;
+}
+
+.page__inner-wrap {
+  background-color: $color-background-grey;
+}
+
+// Custom navigation underline color
+.greedy-nav a {
+  &:hover,
+  &.active {
+    &:before {
+      background: $color-primary-blue;
+    }
+  }
+}
 
 .btn--primary {
-    background: #1D4387;
-
+    background: $color-chromosome;
+    color: $color-primary-blue;
+    
     &:visited {
-        background: #1D4387;
+        background: $color-chromosome;
     }
 
     &:hover {
-        background: darken(#1D4387, 10%);
+        background: darken($color-chromosome, 10%);
     }
 
     &:active,
     &:focus {
-        background: darken(#1D4387, 15%);
+        background: darken($color-chromosome, 15%);
     }
 }
 
 .btn--success {
-    background: #1D4387;
+    background: $color-chromosome;
+    color: $color-primary-blue;
 
     &:visited {
-        background: #1D4387;
+        background: $color-chromosome;
     }
 
     &:hover {
-        background: darken(#1D4387, 10%);
+        background: darken($color-chromosome, 10%);
     }
 
     &:active,
     &:focus {
-        background: darken(#1D4387, 15%);
+        background: darken($color-chromosome, 15%);
     }
 }
 // Custom TOC styling
 .toc {
   .nav__title {
-    background: #1D4387;
+    background: $color-primary-blue;
     color: #fff;
   }
 
   a {
-    color: #1D4387;
+    color: $color-primary-blue;
 
     &:hover {
-      color: darken(#1D4387, 10%);
+      color: darken($color-primary-blue, 10%);
     }
   }
 
   .active a {
-    color: darken(#1D4387, 15%);
+    color: darken($color-primary-blue, 15%);
     font-weight: bold;
   }
 }

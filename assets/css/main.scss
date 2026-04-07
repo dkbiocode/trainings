@@ -6,7 +6,62 @@
 
 // Custom variable overrides before importing theme
 // Footer background color override for mint skin
-$footer-background-color: #0d7377 !default;  // Dark teal - same as link hover color
+$footer-background-color: #1D4387 !default; 
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+
+.btn--primary {
+    background: #1D4387;
+
+    &:visited {
+        background: #1D4387;
+    }
+
+    &:hover {
+        background: darken(#1D4387, 10%);
+    }
+
+    &:active,
+    &:focus {
+        background: darken(#1D4387, 15%);
+    }
+}
+
+.btn--success {
+    background: #1D4387;
+
+    &:visited {
+        background: #1D4387;
+    }
+
+    &:hover {
+        background: darken(#1D4387, 10%);
+    }
+
+    &:active,
+    &:focus {
+        background: darken(#1D4387, 15%);
+    }
+}
+// Custom TOC styling
+.toc {
+  .nav__title {
+    background: #1D4387;
+    color: #fff;
+  }
+
+  a {
+    color: #1D4387;
+
+    &:hover {
+      color: darken(#1D4387, 10%);
+    }
+  }
+
+  .active a {
+    color: darken(#1D4387, 15%);
+    font-weight: bold;
+  }
+}

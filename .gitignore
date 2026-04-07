@@ -6,6 +6,7 @@ dc_workshop/
 backup_dc_workshop/
 
 .DS_Store
+*.swp
 
 *.fastq.gz
 
